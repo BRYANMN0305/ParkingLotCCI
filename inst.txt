@@ -1,0 +1,42 @@
+1.- pip install virtualenv
+
+-->creacion de entorno virtual
+2.- python -m venv myvenv
+
+
+
+ 3.- --> acceder al entorno
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+cd myvenv 
+cd .\Scripts\ 
+.\activate
+
+
+cd..
+cd..
+cd app
+
+--> librerias
+pip install mysql-connector-python
+
+pip install pymysql
+
+pip install pillow
+
+pip install qrcode
+
+
+
+
+--> instalar fast api
+pip install "fastapi[standard]"
+
+
+
+uvicorn main:app --reload
+
+
+fastapi dev main.py
+
+-->comando solo para que ejecute bryan
+uvicorn main:app --host 0.0.0.0 --port 8000

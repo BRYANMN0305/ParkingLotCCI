@@ -1,0 +1,43 @@
+.card-custom {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px; 
+}
+
+.row.d-flex {
+    row-gap: 20px; 
+}
+
+.puestos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.puesto {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.disponible {
+    background-color: green;
+}
+
+.ocupado {
+    background-color: red;
+}
+
+h5.text-titlecase {
+    margin-top: 10px; 
+}
