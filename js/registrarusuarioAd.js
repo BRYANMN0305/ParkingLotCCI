@@ -44,14 +44,16 @@ const enviarformruAd = () => {
         vehiculos: vehiculos
     };
 
-    fetch("http://127.0.0.1:8000/registrar_bene", {
+    fetch("https://fastapi-cci.onrender.com/registrar_bene", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datos)
     })
     .then(response => response.json())
     .then(data => {
-        if (data.qr_path) {
+        console.log("Respuesta de la API:", data); // <-- Muestra la respuesta en consola para depuración
+
+        if (data.mensaje) {  // La API solo devuelve 'mensaje'
             Swal.fire({
                 icon: "success",
                 title: "¡Registro Exitoso!",

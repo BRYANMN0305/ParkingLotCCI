@@ -1,6 +1,6 @@
 (() => {
     const cargarSalida = () => {
-        fetch("http://127.0.0.1:8000/salida_dia") // Ajusta la URL según tu API
+        fetch("https://fastapi-cci.onrender.com/salida_dia") // Ajusta la URL según tu API
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error HTTP: ${response.status}`);

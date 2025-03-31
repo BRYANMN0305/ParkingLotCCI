@@ -23,7 +23,7 @@ const enviar = () => {
 
     console.log("Datos enviados:", JSON.stringify(datos));
 
-    fetch("http://127.0.0.1:8000/contactar", {
+    fetch("https://fastapi-cci.onrender.com/contactar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

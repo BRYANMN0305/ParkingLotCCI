@@ -1,5 +1,5 @@
 const cargarBeneficiarios = () => {
-    fetch("http://127.0.0.1:8000/total_bene")
+    fetch("https://fastapi-cci.onrender.com/total_bene")
         .then(response => response.json()) 
         .then(data => {
             document.getElementById("totalbeneficiario").innerText = data.total_beneficiarios;

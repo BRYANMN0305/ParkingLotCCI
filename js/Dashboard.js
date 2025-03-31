@@ -1,5 +1,5 @@
 const cargarPuestos = () => {
-    fetch("http://localhost:8000/puestos/")
+    fetch("https://fastapi-cci.onrender.com/puestos/")
     .then(res => res.json())
     .then(data => {
         const contenedor = document.getElementById("puestos-container");

@@ -11,7 +11,7 @@ const ocultarBeneficiarios = () => {
 
 // Funcion para obtener y mostrar la lista de empleados desde el servidor
 const cargarYMostrarEmpleados = () => {
-    return fetch("http://127.0.0.1:8000/mostrarempleados", { method: "GET" }) // Petición GET al servidor
+    return fetch("https://fastapi-cci.onrender.com/mostrarempleados", { method: "GET" }) // Petición GET al servidor
         .then(response => response.json()) // Convertir la respuesta a JSON
         .then(data => {
             console.log("Datos recibidos Empleados:", data); // Mostrar datos en consola
@@ -71,7 +71,7 @@ const cargarYMostrarEmpleados = () => {
 
 // Funcion para obtener y mostrar la lista de beneficiarios desde el servidor
 const cargarYMostrarBeneficiarios = () => {
-    return fetch("http://127.0.0.1:8000/mostrarbeneficiarios", { method: "GET" }) // Petición GET al servidor
+    return fetch("https://fastapi-cci.onrender.com/mostrarbeneficiarios", { method: "GET" }) // Petición GET al servidor
         .then(response => response.json()) // Convertir la respuesta a JSON
         .then(data => {
             console.log("Datos recibidos Beneficiarios:", data); // Mostrar datos en consola
@@ -136,7 +136,7 @@ const actualizarempleados = () => {
         rol: document.getElementById("rolEmpleado").value
     };
 
-    fetch(`http://127.0.0.1:8000/actualizarempleado/${id}`, {
+    fetch(`https://fastapi-cci.onrender.com/actualizarempleado/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datosnuevo)
@@ -173,7 +173,7 @@ const editarEmpleado = (id) => {
     let modalElement = document.getElementById("modalEditarEmpleado");
     resetearFormularioEmpleado();
 
-    fetch(`http://127.0.0.1:8000/buscarempleado/${id}`)
+    fetch(`https://fastapi-cci.onrender.com/buscarempleado/${id}`)
         .then(response => response.json())
         .then(data => {
             if (!data || !data.resultado) {
@@ -232,7 +232,7 @@ const eliminarEmpleado = (id) => {
         cancelButtonText: "Cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://127.0.0.1:8000/eliminarempleados/${id}`, { method: "DELETE" })
+            fetch(`https://fastapi-cci.onrender.com/eliminarempleados/${id}`, { method: "DELETE" })
                 .then(response => response.json())
                 .then(data => {
                     console.log("Empleado eliminado:", data);
@@ -264,7 +264,7 @@ const editarBeneficiario = (id) => {
 
     resetearFormularioBeneficiario();
 
-    fetch(`http://127.0.0.1:8000/buscarbeneficiario/${id}`)
+    fetch(`https://fastapi-cci.onrender.com/buscarbeneficiario/${id}`)
         .then(response => response.json())
         .then(data => {
             if (!data || !data.resultado) {
@@ -333,7 +333,7 @@ const actualizarBeneficiario = () => {
         ]
     };
 
-    fetch(`http://127.0.0.1:8000/actualizarbeneficiario/${id}`, {
+    fetch(`https://fastapi-cci.onrender.com/actualizarbeneficiario/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datosActualizados)
@@ -381,7 +381,7 @@ const eliminarBeneficiario = (id) => {
         cancelButtonText: "Cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://127.0.0.1:8000/eliminarbeneficiario/${id}`, { method: "DELETE" })
+            fetch(`https://fastapi-cci.onrender.com/eliminarbeneficiario/${id}`, { method: "DELETE" })
                 .then(response => response.json())
                 .then(data => {
                     console.log("Beneficiario eliminado:", data);

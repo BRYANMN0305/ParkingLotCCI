@@ -1,6 +1,6 @@
 (() => {
     const cargarIngreso = () => {
-        fetch("http://127.0.0.1:8000/ingreso_dia")
+        fetch("https://fastapi-cci.onrender.com/ingreso_dia")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error HTTP: ${response.status}`);

@@ -4,7 +4,7 @@ const ocultarTablas = () => {
 
 // Función para obtener y mostrar la lista de registros desde el servidor
 const cargarTablaRegistro = () => {
-    return fetch("http://127.0.0.1:8000/mostraregingresosalida", { method: "GET" })
+    return fetch("https://fastapi-cci.onrender.com/mostraregingresosalida", { method: "GET" })
         .then(response => response.json()) // Convertir la respuesta a JSON
         .then(data => {
             console.log("Datos recibidos Registros:", data);
