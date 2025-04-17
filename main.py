@@ -1,3 +1,5 @@
+"""""
+
 # Librerías importadas
 from fastapi import FastAPI, HTTPException  # FastAPI para crear la API y HTTPException para manejo de errores HTTP
 from fastapi.middleware.cors import CORSMiddleware  # CORSMiddleware para permitir CORS (compartir recursos entre orígenes)
@@ -89,9 +91,8 @@ class Beneficiario(BaseModel):
 # Endpoint para registrar un beneficiario
 @app.post("/registrar_bene")
 def registrar_bene(nuevo_bene: Beneficiario):
-    """
+    
     Registra un nuevo beneficiario junto con sus vehículos y genera un código QR con su información.
-    """
     try:
 # Creación de un cursor para ejecutar la consulta SQL
         mydb = get_db_connection()  # Abre una nueva conexión
@@ -147,9 +148,7 @@ def registrar_bene(nuevo_bene: Beneficiario):
 
 @app.get("/obtener_qr/")
 def obtener_qr(usuario: str):
-    """
     Obtiene el código QR de un beneficiario por su usuario.
-    """
     try:
         qr_path = os.path.join(QR_DIR, f"{usuario}.png")
 
@@ -216,13 +215,13 @@ def mostrarbeneficiarios():
 # Creación de un cursor para ejecutar la consulta SQL
         mydb = get_db_connection()  # Abre una nueva conexión
         cursor = mydb.cursor(dictionary=True)  
-        cursor.execute("""
+        cursor.execute(
             SELECT 
                 b.id, b.nombre, b.apellido, b.documento, b.usuario, b.contrasena, 
                 v.placa, v.tipovehiculo 
             FROM beneficiarios b 
             LEFT JOIN vehiculos v ON b.documento = v.documento
-        """)
+        )
         result = cursor.fetchall()
         cursor.close()
 
@@ -277,7 +276,7 @@ def actualizarempleado(id:int,nuevorol: Rol):
 # Creación de un cursor para ejecutar la consulta SQL
         mydb = get_db_connection()  # Abre una nueva conexión
         cursor = mydb.cursor(dictionary=True)  
-        cursor.execute("""
+        cursor.execute(
         UPDATE roles
         SET nombre = %s,
         apellido = %s,
@@ -286,7 +285,7 @@ def actualizarempleado(id:int,nuevorol: Rol):
         documento = %s,
         rol = %s
         WHERE id = %s
-        """, (nombre, apellido, usuario, contrasena, documento, rol, id))
+        , (nombre, apellido, usuario, contrasena, documento, rol, id))
         mydb.commit()
         cursor.close()
         return{"informacion":"empleado actualizado"}
@@ -359,11 +358,11 @@ def actualizar_beneficiario(id: int, beneficiario: BeneficiarioUpdate):
             raise HTTPException(status_code=404, detail="Beneficiario no encontrado")
 
         # 🔹 Actualizar beneficiario
-        query = """
+        query = 
             UPDATE beneficiarios 
             SET nombre = %s, apellido = %s, documento = %s, usuario = %s, contrasena = %s
             WHERE id = %s
-        """
+        
         cursor.execute(query, (
             beneficiario.nombre, beneficiario.apellido, beneficiario.documento, 
             beneficiario.usuario, beneficiario.contrasena, id
@@ -372,11 +371,11 @@ def actualizar_beneficiario(id: int, beneficiario: BeneficiarioUpdate):
         #Actualizar vehículos si existen
         if beneficiario.vehiculos:
             for vehiculo in beneficiario.vehiculos:
-                cursor.execute("""
+                cursor.execute(
                     UPDATE vehiculos 
                     SET placa = %s, tipovehiculo = %s
                     WHERE documento = %s AND placa = %s
-                """, (vehiculo.placa, vehiculo.tipovehiculo, beneficiario.documento, vehiculo.placa))
+                , (vehiculo.placa, vehiculo.tipovehiculo, beneficiario.documento, vehiculo.placa))
 
         #Confirmar cambios
         mydb.commit()
@@ -396,14 +395,14 @@ def buscar_beneficiario(id: int):
     try:
         mydb = get_db_connection()  # Abre una nueva conexión
         cursor = mydb.cursor(dictionary=True)
-        cursor.execute("""
+        cursor.execute(
             SELECT 
                 b.id, b.nombre, b.apellido, b.documento, b.usuario, b.contrasena, 
                 v.placa, v.tipovehiculo 
             FROM beneficiarios b
             LEFT JOIN vehiculos v ON b.documento = v.documento
             WHERE b.id = %s
-        """, (id,))
+        , (id,))
         
         beneficiario = cursor.fetchone()
         cursor.close()
@@ -567,3 +566,5 @@ def contactar(enviar: Contacto):
     finally:
         cursor.close()
         mydb.close()
+        
+"""""
