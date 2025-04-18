@@ -8,12 +8,12 @@
                 return response.json();
             })
             .then(data => {
-                const beneficiario = data.total_bene ?? 0;
+                const beneficiario = data.total_bene ?? 0; // 👈 corregido aquí
                 console.log("Total beneficiarios:", beneficiario);
 
                 const mitad = document.getElementById("valorMitad");
                 if (mitad) {
-                    mitad.textContent = beneficiario;
+                    mitad.textContent = beneficiario; // 👈 y aquí también
                 }
 
                 const ctx = document.getElementById('graficoBeneficiarios').getContext('2d');
@@ -26,9 +26,9 @@
                         type: 'doughnut',
                         data: {
                             datasets: [{
-                                data: [beneficiario],
-                                backgroundColor: ['rgba(227, 0, 0, 0.7)'],
-                                borderColor: ['rgba(0, 0, 0, 0.7)'],
+                                data: [beneficiario, 0], // para que se vea completo el anillo
+                                backgroundColor: ['rgba(227, 0, 0, 0.7)', 'rgba(201, 203, 207, 0.2)'],
+                                borderColor: ['rgba(0, 0, 0, 0.7)', 'rgba(0, 0, 0, 0.1)'],
                                 borderWidth: 1
                             }]
                         },
