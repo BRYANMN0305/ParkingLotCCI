@@ -8,9 +8,8 @@
                 return response.json();
             })
             .then(data => {
-                const ingreso = data.ingreso_dia ?? 0;
-                const totalEspacios = null;
-                const libres = totalEspacios - ingreso;
+                const ingreso = data.ingreso_dia ?? 0; // contabilizador de ingreso_dia
+                
 
                 // Mostrar el valor en el centro del gráfico
                 const centro = document.getElementById("valorCentro");

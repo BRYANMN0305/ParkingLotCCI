@@ -8,10 +8,7 @@
                 return response.json();
             })
             .then(data => {
-                console.log("Datos recibidos:", data); // 👈 Agrega esto para ver qué trae
-                const salida = data.salida_dia ?? 0;
-                const totalEspacios = null;
-                const ocupados = totalEspacios - salida;
+                const salida = data.salida_dia ?? 0; // contabilizador de salida_dia
 
                 // Mostrar el valor en el centro del gráfico
                 const medio = document.getElementById("valorMedio");
