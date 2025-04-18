@@ -9,95 +9,93 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
-    <!-- Navbar Superior -->
-    <nav class="navbar" style="background-color: rgb(218, 216, 216);">
-        <div class="container">
-            <div class="row w-100 text-center">
-                <div class="col-12 col-lg-3 mx-auto">
-                    <a class="navbar-brand">
-                        <img src="../img/logo-cciingenieros.png" alt="Bootstrap" class="img-fluid"
-                            style="max-width: 200px; height: auto;">
+<!-- Navbar Superior -->
+<nav class="navbar" style="background-color: rgb(218, 216, 216);">
+    <div class="container">
+        <div class="row w-100 text-center">
+            <div class="col-12 col-lg-3 mx-auto">
+                <a class="navbar-brand">
+                    <img src="../img/logo-cciingenieros.png" alt="Bootstrap" class="img-fluid"
+                        style="max-width: 200px; height: auto;">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
+    <div class="container-fluid">
+
+        <!-- Botón Panel Principal con ícono -->
+        <a class="navbar-brand btn me-2 mt-2 d-flex align-items-center" href="DashEmp.html" style="padding: 5px 10px;">
+            <img src="../img/home.ico" alt="Not Found" class="img-fluid"
+                style="width: 24px; height: 24px; margin-right: 8px;">
+            Panel Principal
+        </a>
+
+        <!-- Botón hamburguesa para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Opciones del navbar -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+
+                <!-- Crear Beneficiario -->
+                <li class="nav-item">
+                    <a class="nav-link active h4 mt-3 d-flex align-items-center" href="../html/RegistrarUsuarioEmp.html"
+                        style="padding: 5px 10px;">
+                        <img src="../img/add_user.ico" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        Crear Beneficiario
                     </a>
-                </div>
-            </div>
+                </li>
+
+                <!-- Gestión de Personal -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link active h4 mt-3 dropdown-toggle d-flex align-items-center" href="#"
+                        id="empleadosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="padding: 5px 10px;">
+                        <img src="../img/settings.ico" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        Gestión de Personal
+                    </a>
+                    <ul class="dropdown-menu text-center w-100" aria-labelledby="empleadosDropdown">
+                        <li><a class="dropdown-item w-100"
+                                href="../html/VerRegistrosEmpleadosEmp.html">Administrativo</a></li>
+                        <li><a class="dropdown-item w-100" href="../html/MostrarBeneficiariosEmp.html">Beneficiario</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Movimientos -->
+                <li class="nav-item">
+                    <a class="nav-link active h4 mt-3 d-flex align-items-center" href="../html/RegIngresoSalidaEmp.html"
+                        style="padding: 5px 10px;">
+                        <img src="../img/car.ico" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        Movimientos
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Cerrar sesión -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand active me-3 mt-2  d-flex align-items-center" onclick="cerrarSesion()"
+                        style="padding: 5px 10px;">
+                        <img src="../img/log_out.png" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;"></a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
-        <div class="container-fluid">
+</nav>
 
-            <!-- Botón Panel Principal con ícono -->
-            <a class="navbar-brand btn me-2 mt-2 d-flex align-items-center" href="DashEmp.html"
-                style="padding: 5px 10px;">
-                <img src="../img/home.ico" alt="Not Found" class="img-fluid"
-                    style="width: 24px; height: 24px; margin-right: 8px;">
-                Panel Principal
-            </a>
-
-            <!-- Botón para móviles -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Opciones del navbar -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-
-                    <!-- Crear Beneficiario -->
-                    <li class="nav-item">
-                        <a class="nav-link active h4 mt-3 d-flex align-items-center"
-                            href="../html/RegistrarUsuarioEmp.html" style="padding: 5px 10px;">
-                            <img src="../img/add_user.ico" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            Crear Beneficiario
-                        </a>
-                    </li>
-
-                    <!-- Gestión de Personal -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active h4 mt-3 dropdown-toggle d-flex align-items-center" href="#"
-                            id="empleadosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            style="padding: 5px 10px;">
-                            <img src="../img/settings.ico" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            Gestión de Personal
-                        </a>
-                        <ul class="dropdown-menu text-center w-100" aria-labelledby="empleadosDropdown">
-                            <li><a class="dropdown-item w-100"
-                                    href="../html/VerRegistrosEmpleadosEmp.html">Administrativo</a></li>
-                            <li><a class="dropdown-item w-100"
-                                    href="../html/MostrarBeneficiariosEmp.html">Beneficiario</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Movimientos -->
-                    <li class="nav-item">
-                        <a class="nav-link active h4 mt-3 d-flex align-items-center"
-                            href="../html/RegIngresoSalidaEmp.html" style="padding: 5px 10px;">
-                            <img src="../img/car.ico" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            Movimientos
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Cerrar sesión -->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="navbar-brand active me-3 mt-2  d-flex align-items-center" onclick="cerrarSesion()"
-                            style="padding: 5px 10px;">
-                            <img src="../img/log_out.png" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </nav>
-
+<body>
 
 
     <!-- Contenedor principal que abarca toda la pantalla -->
@@ -194,8 +192,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        -->
+        </div> 
+    -->
 
         <!-- Modal de Edición -->
         <div class="modal fade" id="editarBeneficiarioModal" tabindex="-1" aria-labelledby="editarBeneficiarioLabel"
