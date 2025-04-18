@@ -8,6 +8,7 @@
                 return response.json();
             })
             .then(data => {
+                console.log("Datos recibidos:", data); // 👈 Agrega esto para ver qué trae
                 const salida = data.salida_dia ?? 0;
                 const totalEspacios = 20;
                 const ocupados = totalEspacios + salida;
