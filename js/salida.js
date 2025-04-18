@@ -36,7 +36,7 @@
                                 ],
                                 borderColor: [
                                     'rgba(0, 0, 0, 0.7)',
-                                    'rgba(201, 203, 207, 1)'
+                                    'rgba(0, 0, 0, 0.7)',
                                 ],
                                 borderWidth: 1
                             }]

@@ -32,12 +32,12 @@
                             datasets: [{
                                 data: [ingreso, libres],
                                 backgroundColor: [
-                                    'rgba(220, 53, 69, 0.7)',
+                                    'rgba(227, 0, 0, 0.7)',
                                     'rgba(201, 203, 207, 0.7)'
                                 ],
                                 borderColor: [
-                                    'rgba(220, 53, 69, 0.7)',
-                                    'rgba(201, 203, 207, 1)'
+                                    'rgba(0, 0, 0, 0.7)',
+                                    'rgba(0, 0, 0, 0.7)',
                                 ],
                                 borderWidth: 1
                             }]
