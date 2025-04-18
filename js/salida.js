@@ -2,7 +2,7 @@
     let miGrafico = null;
 
     const cargarSalida = () => {
-        fetch("https://fastapi-cci.onrender.com/ingreso_dia")
+        fetch("https://fastapi-cci.onrender.com/salida_dia")
             .then(response => {
                 if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                 return response.json();
