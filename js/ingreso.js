@@ -9,8 +9,8 @@
             })
             .then(data => {
                 const ingreso = data.ingreso_dia ?? 0; // contabilizador de ingreso_dia
-                const libres = data.libres ?? 0; // contabilizador de libres
-                
+                const totalEspacios = 20;
+                const libres = totalEspacios - ingreso;
 
                 // Mostrar el valor en el centro del gráfico
                 const centro = document.getElementById("valorCentro");
