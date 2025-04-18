@@ -11,7 +11,7 @@
                 console.log("Datos recibidos:", data); // 👈 Agrega esto para ver qué trae
                 const salida = data.salida_dia ?? 0;
                 const totalEspacios = 20;
-                const ocupados = totalEspacios + salida;
+                const ocupados = totalEspacios - salida;
 
                 // Mostrar el valor en el centro del gráfico
                 const medio = document.getElementById("valorMedio");
