@@ -39,7 +39,7 @@
                                     'rgba(0, 0, 0, 0.7)',
                                     'rgba(0, 0, 0, 0.7)',
                                 ],
-                                borderWidth: 1
+                                borderWidth: [1,1]
                             }]
                         },
                         options: {
