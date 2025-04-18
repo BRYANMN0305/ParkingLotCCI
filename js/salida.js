@@ -1,31 +1,71 @@
 (() => {
+    let miGrafico = null;
+
     const cargarSalida = () => {
-        fetch("https://fastapi-cci.onrender.com/salida_dia") // Ajusta la URL según tu API
+        fetch("https://fastapi-cci.onrender.com/ingreso_dia")
             .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Error HTTP: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                 return response.json();
             })
             .then(data => {
-                console.log("Datos recibidos (salida):", data);
-                const salidaElemento = document.getElementById("salida");
+                const salida = data.salida_dia ?? 0;
+                const totalEspacios = 20;
+                const ocupados = totalEspacios + salida;
 
-                if (salidaElemento) {
-                    salidaElemento.innerText = data.salida_dia ?? "Sin datos";
+                // Mostrar el valor en el centro del gráfico
+                const centro = document.getElementById("valorCentro");
+                if (centro) {
+                    centro.textContent = ingreso;
+                }
+
+                const ctx = document.getElementById('graficoSalida').getContext('2d');
+
+                if (miGrafico) {
+                    // Solo actualiza los datos si el gráfico ya existe
+                    miGrafico.data.datasets[0].data = [salida, ocupados];
+                    miGrafico.update();
                 } else {
-                    console.error("Elemento con ID 'salida' no encontrado.");
+                    // Crea el gráfico por primera vez
+                    miGrafico = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            datasets: [{
+                                data: [salida, ocupados],
+                                backgroundColor: [
+                                    'rgba(75, 192, 192, 0.7)',
+                                    'rgba(201, 203, 207, 0.7)'
+                                ],
+                                borderColor: [
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(201, 203, 207, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            cutout: '75%',
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                title: {
+                                    display: false
+                                }
+                            }
+                        }
+                    });
                 }
             })
             .catch(error => {
                 console.error("Error al obtener las salidas:", error);
-                const salidaElemento = document.getElementById("salida");
-                if (salidaElemento) {
-                    salidaElemento.innerText = "Error";
+                const centro = document.getElementById("valorCentro");
+                if (centro) {
+                    centro.textContent = "Error";
                 }
             });
     };
 
-    cargarSalida(); // Cargar al inicio
-    setInterval(cargarSalida, 5000); // Actualiza cada 5 segundos
+    cargarSalida();
+    setInterval(cargarSalida, 5000);
 })();
