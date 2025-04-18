@@ -9,6 +9,8 @@
             })
             .then(data => {
                 const beneficiario = data.total_bene ?? 0; // contabilizador de total_bene
+                const totalMaximo = 100; // o un valor fijo de referencia
+                const restante = totalMaximo - beneficiario;
 
                 // Mostrar el valor en el centro del gráfico
                 const mitad = document.getElementById("valorMitad");
