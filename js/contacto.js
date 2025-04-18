@@ -22,7 +22,7 @@ const enviar = () => {
     };
 
     console.log("Datos enviados:", JSON.stringify(datos));
-
+        //https://fastapi-cci.onrender.com
     fetch("https://fastapi-cci.onrender.com/contactar", {
         method: "POST",
         headers: {
