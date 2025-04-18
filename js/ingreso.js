@@ -1,53 +1,5 @@
 (() => {
-    const ctx = document.getElementById('ingresoChart').getContext('2d');
-
-    // Plugin para dibujar texto en el centro
-    const centerText = {
-        id: 'centerText',
-        beforeDraw(chart) {
-            const { width } = chart;
-            const { height } = chart;
-            const ctx = chart.ctx;
-            ctx.restore();
-
-            const ingreso = chart.config.options.plugins.centerText.text;
-            const fontSize = (height / 5).toFixed(2);
-            ctx.font = `${fontSize}px Arial`;
-            ctx.textBaseline = "middle";
-            ctx.textAlign = "center";
-
-            const centerX = width / 2;
-            const centerY = height / 2;
-
-            ctx.fillStyle = "#000"; // Color del número
-            ctx.fillText(ingreso, centerX, centerY);
-            ctx.save();
-        }
-    };
-
-    // Crear el gráfico
-    const ingresoChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                data: [0, 100],
-                backgroundColor: ['#00c6ff', '#e0e0e0'], // Color de avance y fondo
-                borderWidth: 0
-            }]
-        },
-        options: {
-            cutout: '75%',
-            responsive: true,
-            plugins: {
-                tooltip: { enabled: false },
-                legend: { display: false },
-                centerText: {
-                    text: '0' // Texto inicial
-                }
-            }
-        },
-        plugins: [centerText]
-    });
+    let miGrafico = null;
 
     const cargarIngreso = () => {
         fetch("https://fastapi-cci.onrender.com/ingreso_dia")
@@ -59,19 +11,65 @@
             })
             .then(data => {
                 console.log("Datos recibidos:", data);
-                const valorIngreso = data.ingreso_dia ?? 0;
+                const ingresoElemento = document.getElementById("Ingreso");
+                const ingreso = data.ingreso_dia ?? 0;
 
-                const porcentaje = Math.min(Math.max(valorIngreso, 0), 100);
+                if (ingresoElemento) {
+                    ingresoElemento.innerText = ingreso;
+                } else {
+                    console.error("Elemento con ID 'Ingreso' no encontrado.");
+                }
 
-                ingresoChart.data.datasets[0].data = [porcentaje, 100 - porcentaje];
-                ingresoChart.options.plugins.centerText.text = valorIngreso;
-                ingresoChart.update();
+                // Actualizar o crear el gráfico
+                const ctx = document.getElementById('graficoIngreso').getContext('2d');
+                const totalEspacios = 20; // <-- Aquí pon el número total de espacios de tu parqueadero
+                const libres = totalEspacios - ingreso;
+
+                if (miGrafico) {
+                    miGrafico.data.datasets[0].data = [ingreso, libres];
+                    miGrafico.update();
+                } else {
+                    miGrafico = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Ingresos', 'Espacios Libres'],
+                            datasets: [{
+                                data: [ingreso, libres],
+                                backgroundColor: [
+                                    'rgba(75, 192, 192, 0.7)',
+                                    'rgba(201, 203, 207, 0.7)'
+                                ],
+                                borderColor: [
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(201, 203, 207, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Ingresos del Día'
+                                }
+                            }
+                        }
+                    });
+                }
             })
             .catch(error => {
                 console.error("Error al obtener los ingresos:", error);
+                const ingresoElemento = document.getElementById("Ingreso");
+                if (ingresoElemento) {
+                    ingresoElemento.innerText = "Error";
+                }
             });
     };
 
-    cargarIngreso(); // Al cargar la página
-    setInterval(cargarIngreso, 5000); // Cada 5 segundos
+    cargarIngreso(); // Cargar al inicio
+    setInterval(cargarIngreso, 5000); // Actualizar cada 5 segundos
 })();
