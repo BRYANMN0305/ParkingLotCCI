@@ -9,6 +9,7 @@
             })
             .then(data => {
                 const salida = data.salida_dia ?? 0; // contabilizador de salida_dia
+                const ocupados = data.ocupados ?? 0; // contabilizador de ocupados
 
                 // Mostrar el valor en el centro del gráfico
                 const medio = document.getElementById("valorMedio");

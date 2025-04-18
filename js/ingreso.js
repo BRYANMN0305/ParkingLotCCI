@@ -9,6 +9,7 @@
             })
             .then(data => {
                 const ingreso = data.ingreso_dia ?? 0; // contabilizador de ingreso_dia
+                const libres = data.libres ?? 0; // contabilizador de libres
                 
 
                 // Mostrar el valor en el centro del gráfico
