@@ -42,16 +42,16 @@
                             responsive: true,
                             plugins: {
                                 legend: {
-                                    display: false // Elimina la leyenda
+                                    display: false
                                 },
                                 title: {
-                                    display: true,
-                                    text: 'Ingresos del Día'
+                                    display: false // Ocultamos también el "Ingresos del Día"
                                 }
                             },
-                            cutout: '70%' // más grande para más espacio en el centro
+                            cutout: '75%' // Más espacio para el número
                         }
                     });
+                    
                 }
             })
             .catch(error => {
