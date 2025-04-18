@@ -16,7 +16,7 @@
                     mitad.textContent = beneficario;
                 }
 
-                const ctx = document.getElementById('graficoBeneficiario').getContext('2d');
+                const ctx = document.getElementById('graficoBeneficiarios').getContext('2d');
 
                 if (miGrafico) {
                     // Solo actualiza los datos si el gráfico ya existe
