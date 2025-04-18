@@ -8,34 +8,34 @@
                 return response.json();
             })
             .then(data => {
-                const beneficario = data.total_bene ?? 0; // contabilizador de beneficiarios
+                const beneficiario = data.total_bene ?? 0; // contabilizador de total_bene
 
                 // Mostrar el valor en el centro del gráfico
                 const mitad = document.getElementById("valorMitad");
                 if (mitad) {
-                    mitad.textContent = beneficario;
+                    mitad.textContent = beneficiario;
                 }
 
                 const ctx = document.getElementById('graficoBeneficiarios').getContext('2d');
 
                 if (miGrafico) {
-                    // Solo actualiza los datos si el gráfico ya existe
-                    miGrafico.data.datasets[0].data = [beneficario];
+                    miGrafico.data.datasets[0].data = [beneficiario, restante];
                     miGrafico.update();
                 } else {
-                    // Crea el gráfico por primera vez
                     miGrafico = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
                             datasets: [{
-                                data: [beneficario],
+                                data: [beneficiario, restante],
                                 backgroundColor: [
-                                    'rgba(227, 0, 0, 0.7)',
+                                    'rgba(227, 0, 0, 0.7)',       // rojo principal
+                                    'rgba(201, 203, 207, 0.3)'    // gris suave de fondo
                                 ],
                                 borderColor: [
                                     'rgba(0, 0, 0, 0.7)',
+                                    'rgba(0, 0, 0, 0.2)'
                                 ],
-                                borderWidth: 1
+                                borderWidth: [1, 1]
                             }]
                         },
                         options: {
