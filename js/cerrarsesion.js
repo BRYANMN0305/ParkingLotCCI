@@ -18,11 +18,12 @@ const cerrarSesion = () => {
         text: "¿Deseas cerrar sesión?",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
         confirmButtonText: 'Sí, cerrar sesión',
         cancelButtonText: 'Cancelar'
     }).then((result) => {
+        //Si el usuario confirma, se cierra la sesión
         if (result.isConfirmed) {
             sessionStorage.removeItem("autenticado");
             sessionStorage.removeItem("rol");
