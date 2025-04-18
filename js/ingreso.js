@@ -9,7 +9,7 @@
             })
             .then(data => {
                 const ingreso = data.ingreso_dia ?? 0;
-                const totalEspacios = 20;
+                const totalEspacios = null;
                 const libres = totalEspacios - ingreso;
 
                 // Mostrar el valor en el centro del gráfico
