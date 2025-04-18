@@ -12,16 +12,20 @@
                 const totalEspacios = 20;
                 const libres = totalEspacios - ingreso;
 
-                // Mostrar el valor en el centro
+                // Mostrar el valor en el centro del gráfico
                 const centro = document.getElementById("valorCentro");
-                if (centro) centro.innerText = ingreso;
+                if (centro) {
+                    centro.textContent = ingreso;
+                }
 
-                // Crear o actualizar el gráfico
                 const ctx = document.getElementById('graficoIngreso').getContext('2d');
+
                 if (miGrafico) {
+                    // Solo actualiza los datos si el gráfico ya existe
                     miGrafico.data.datasets[0].data = [ingreso, libres];
                     miGrafico.update();
                 } else {
+                    // Crea el gráfico por primera vez
                     miGrafico = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
@@ -40,28 +44,28 @@
                         },
                         options: {
                             responsive: true,
+                            cutout: '75%',
                             plugins: {
                                 legend: {
                                     display: false
                                 },
                                 title: {
-                                    display: false // Ocultamos también el "Ingresos del Día"
+                                    display: false
                                 }
-                            },
-                            cutout: '75%' // Más espacio para el número
+                            }
                         }
                     });
-                    
                 }
             })
             .catch(error => {
                 console.error("Error al obtener los ingresos:", error);
                 const centro = document.getElementById("valorCentro");
-                if (centro) centro.innerText = "Error";
+                if (centro) {
+                    centro.textContent = "Error";
+                }
             });
     };
 
     cargarIngreso();
     setInterval(cargarIngreso, 5000);
 })();
-// Se ejecuta cada 5 segundos
