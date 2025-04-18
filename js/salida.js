@@ -15,7 +15,7 @@
                 // Mostrar el valor en el centro del gráfico
                 const medio = document.getElementById("valorMedio");
                 if (medio) {
-                    medio.textContent = ingreso;
+                    medio.textContent = salida;
                 }
 
                 const ctx = document.getElementById('graficoSalida').getContext('2d');
