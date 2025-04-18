@@ -27,50 +27,73 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand btn me-2 mt-2" href="DashAd.html">Dashboard</a>
+
+            <!-- Botón Panel Principal con ícono -->
+            <a class="navbar-brand btn me-2 mt-2 d-flex align-items-center" href="DashAd.html" style="padding: 5px 10px;">
+                <img src="../img/home.ico" alt="Not Found" class="img-fluid" style="width: 24px; height: 24px; margin-right: 8px;">
+                Panel Principal
+            </a>
+        
+            <!-- Botón hamburguesa para móviles -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+        
+            <!-- Opciones del navbar -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active h4 mt-3" aria-current="page"
-                            href="../html/RegistrarRolAd.html">Registrar
-                            Rol</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active h4 mt-3" href="../html/RegistrarUsuarioAd.html">Registrar Usuario</a>
-                    </li>
 
-                    <!-- Menú desplegable con texto centrado -->
+                    <!-- Asignar Funciones -->
+                    <li class="nav-item">
+                        <a class="nav-link active h4 mt-3 d-flex align-items-center" href="../html/RegistrarRolAd.html" style="padding: 5px 10px;">
+                            <img src="../img/registro.png" alt="Not Found" class="img-fluid" style="width: 24px; height: 24px; margin-right: 8px;">
+                            Asignar Funciones
+                        </a>
+                    </li>
+        
+                    <!-- Crear Beneficiario -->
+                    <li class="nav-item">
+                        <a class="nav-link active h4 mt-3 d-flex align-items-center" href="../html/RegistrarUsuarioAd.html" style="padding: 5px 10px;">
+                            <img src="../img/add_user.ico" alt="Not Found" class="img-fluid" style="width: 24px; height: 24px; margin-right: 8px;">
+                            Crear Beneficiario
+                        </a>
+                    </li>
+        
+                    <!-- Gestión de Personal -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link active h4 mt-3 dropdown-toggle" href="#" id="empleadosDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Ver Registro
+                        <a class="nav-link active h4 mt-3 dropdown-toggle d-flex align-items-center" href="#" id="empleadosDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="padding: 5px 10px;">
+                            <img src="../img/settings.ico" alt="Not Found" class="img-fluid" style="width: 24px; height: 24px; margin-right: 8px;">
+                            Gestión de Personal
                         </a>
                         <ul class="dropdown-menu text-center w-100" aria-labelledby="empleadosDropdown">
-                            <li><a class="dropdown-item w-100" href="../html/VerRegistrosEmpleadosAd.html">Empleados</a>
-                            </li>
-                            <li><a class="dropdown-item w-100"
-                                    href="../html/MostrarBeneficiarios.html">Beneficiarios</a></li>
+                            <li><a class="dropdown-item w-100" href="../html/VerRegistrosEmpleadosAd.html">Administrativo</a></li>
+                            <li><a class="dropdown-item w-100" href="../html/MostrarBeneficiarios.html">Beneficiario</a></li>
                         </ul>
                     </li>
-
+        
+                    <!-- Movimientos -->
                     <li class="nav-item">
-                        <a class="nav-link active h4 mt-3" href="../html/RegIngresoSalidaAd.html">Registro
-                            Ingreso/Salida</a>
+                        <a class="nav-link active h4 mt-3 d-flex align-items-center" href="../html/RegIngresoSalidaAd.html" style="padding: 5px 10px;">
+                            <img src="../img/car.ico" alt="Not Found" class="img-fluid" style="width: 24px; height: 24px; margin-right: 8px;">
+                            Movimientos
+                        </a>
                     </li>
                 </ul>
+        
+                <!-- Cerrar sesión -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="navbar-brand active btn me-3 mt-3" onclick="cerrarSesion()">Cerrar Sesión</a>
+                        <a class="navbar-brand active me-3 mt-2  d-flex align-items-center" onclick="cerrarSesion()" style="padding: 5px 10px;">
+                            <img src="../img/log_out.png" alt="Not Found" class="img-fluid" style="width: 24px; height: 24px; margin-right: 8px;"></a>
                     </li>
                 </ul>
             </div>
         </div>
+        
     </nav>
 
     <!-- Formulario de registro -->
