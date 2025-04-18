@@ -4,27 +4,20 @@
     const cargarIngreso = () => {
         fetch("https://fastapi-cci.onrender.com/ingreso_dia")
             .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Error HTTP: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                 return response.json();
             })
             .then(data => {
-                console.log("Datos recibidos:", data);
-                const ingresoElemento = document.getElementById("Ingreso");
                 const ingreso = data.ingreso_dia ?? 0;
-
-                if (ingresoElemento) {
-                    ingresoElemento.innerText = ingreso;
-                } else {
-                    console.error("Elemento con ID 'Ingreso' no encontrado.");
-                }
-
-                // Actualizar o crear el gráfico
-                const ctx = document.getElementById('graficoIngreso').getContext('2d');
-                const totalEspacios = 20; // <-- Aquí pon el número total de espacios de tu parqueadero
+                const totalEspacios = 20;
                 const libres = totalEspacios - ingreso;
 
+                // Mostrar el valor en el centro
+                const centro = document.getElementById("valorCentro");
+                if (centro) centro.innerText = ingreso;
+
+                // Crear o actualizar el gráfico
+                const ctx = document.getElementById('graficoIngreso').getContext('2d');
                 if (miGrafico) {
                     miGrafico.data.datasets[0].data = [ingreso, libres];
                     miGrafico.update();
@@ -32,7 +25,6 @@
                     miGrafico = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
-                            labels: ['Ingresos', 'Espacios Libres'],
                             datasets: [{
                                 data: [ingreso, libres],
                                 backgroundColor: [
@@ -50,26 +42,26 @@
                             responsive: true,
                             plugins: {
                                 legend: {
-                                    position: 'bottom',
+                                    display: false // Elimina la leyenda
                                 },
                                 title: {
                                     display: true,
                                     text: 'Ingresos del Día'
                                 }
-                            }
+                            },
+                            cutout: '70%' // más grande para más espacio en el centro
                         }
                     });
                 }
             })
             .catch(error => {
                 console.error("Error al obtener los ingresos:", error);
-                const ingresoElemento = document.getElementById("Ingreso");
-                if (ingresoElemento) {
-                    ingresoElemento.innerText = "Error";
-                }
+                const centro = document.getElementById("valorCentro");
+                if (centro) centro.innerText = "Error";
             });
     };
 
-    cargarIngreso(); // Cargar al inicio
-    setInterval(cargarIngreso, 5000); // Actualizar cada 5 segundos
+    cargarIngreso();
+    setInterval(cargarIngreso, 5000);
 })();
+// Se ejecuta cada 5 segundos
