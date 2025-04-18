@@ -11,7 +11,7 @@
                 const beneficario = data.total_bene ?? 0; // contabilizador de beneficiarios
 
                 // Mostrar el valor en el centro del gráfico
-                const mitad = document.getElementById("valorCentro");
+                const mitad = document.getElementById("valorMitad");
                 if (mitad) {
                     mitad.textContent = beneficario;
                 }
