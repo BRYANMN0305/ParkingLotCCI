@@ -13,9 +13,9 @@
                 const ocupados = totalEspacios + salida;
 
                 // Mostrar el valor en el centro del gráfico
-                const centro = document.getElementById("valorCentro");
-                if (centro) {
-                    centro.textContent = ingreso;
+                const medio = document.getElementById("valorMedio");
+                if (medio) {
+                    medio.textContent = ingreso;
                 }
 
                 const ctx = document.getElementById('graficoSalida').getContext('2d');
@@ -59,9 +59,9 @@
             })
             .catch(error => {
                 console.error("Error al obtener las salidas:", error);
-                const centro = document.getElementById("valorCentro");
-                if (centro) {
-                    centro.textContent = "Error";
+                const medio = document.getElementById("valorMedio");
+                if (medio) {
+                    medio.textContent = "Error";
                 }
             });
     };
