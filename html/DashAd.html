@@ -109,125 +109,131 @@
     </nav>
 
     <!-- Contenedor principal que abarca toda la pantalla -->
-    <div class="container-fluid">
+    <<div class="container-fluid">
         <div class="main-panel">
             <div class="content-wrapper">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <h5 class="text-titlecase mb-4">Estadísticas generales</h5>
 
-                        <div class="row g-4">
-                            <!-- Columna izquierda: 3 tarjetas -->
-                            <div class="col-lg-4 d-flex flex-column gap-4">
-                                <!-- Ingresos -->
-                                <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <p class="text-center mb-2 text-muted">Ingresos del día</p>
-                                        <div class="position-relative mx-auto" style="width:150px; height:150px;">
-                                            <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
-                                            <div id="valorCentro"
-                                                class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size:22px; color:#333; pointer-events:none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- Título principal, arriba -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h5 class="text-titlecase">Estadísticas generales</h5>
+                    </div>
+                </div>
 
-                                <!-- Salidas -->
-                                <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <p class="text-center mb-2 text-muted">Salidas del día</p>
-                                        <div class="position-relative mx-auto" style="width:150px; height:150px;">
-                                            <canvas id="graficoSalida" class="w-100 h-100"></canvas>
-                                            <div id="valorMedio"
-                                                class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size:22px; color:#333; pointer-events:none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Beneficiarios -->
-                                <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <p class="text-center mb-2 text-muted">Total Beneficiarios registrados</p>
-                                        <div class="position-relative mx-auto" style="width:150px; height:150px;">
-                                            <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
-                                            <div id="valorMitad"
-                                                class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size:22px; color:#333; pointer-events:none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h5 class="text-titlecase mb-4">Estadísticas generales</h5>
-
-                            <!-- Columna derecha: Estado de los Puestos -->
-                            <div class="col-lg-8 d-flex flex-column">
-
-                                <div class="card bg-light rounded-4 shadow-lg border-0 p-4 h-100">
-                                    <div class="card-body d-flex flex-column">
-                                        <p class="mb-3">Disponibilidad Actual</p>
-                                        <div id="puestos-container" class="puestos-grid flex-grow-1 overflow-auto">
-                                        </div>
-                                    </div>
+                <!-- Fila 1: Ingresos, Salidas  |  Estado de los Puestos -->
+                <div class="row g-4">
+                    <!-- Ingresos + Salidas en columna -->
+                    <div class="col-lg-4 d-flex flex-column gap-4">
+                        <!-- Ingresos -->
+                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-center mb-2 text-muted">Ingresos del día</p>
+                                <div class="position-relative mx-auto" style="width:150px; height:150px;">
+                                    <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
+                                    <div id="valorCentro"
+                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
+                                        style="font-size:22px; color:#333; pointer-events:none;"></div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Salidas -->
+                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-center mb-2 text-muted">Salidas del día</p>
+                                <div class="position-relative mx-auto" style="width:150px; height:150px;">
+                                    <canvas id="graficoSalida" class="w-100 h-100"></canvas>
+                                    <div id="valorMedio"
+                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
+                                        style="font-size:22px; color:#333; pointer-events:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estado de los Puestos al lado derecho, misma altura -->
+                    <div class="col-lg-8 d-flex">
+                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4 flex-fill">
+                            <div class="card-body d-flex flex-column h-100">
+                                <h6 class="text-center mb-3">Estado de los Puestos</h6>
+                                <p class="mb-3">Disponibilidad Actual</p>
+                                <div id="puestos-container" class="puestos-grid flex-grow-1 overflow-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fila 2: Total Beneficiarios -->
+                <div class="row mt-4">
+                    <div class="col-lg-4">
+                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-center mb-2 text-muted">Total Beneficiarios registrados</p>
+                                <div class="position-relative mx-auto" style="width:150px; height:150px;">
+                                    <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
+                                    <div id="valorMitad"
+                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
+                                        style="font-size:22px; color:#333; pointer-events:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Fila 2 -->
+
+            </div>
+        </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="mt-auto" style="background-color: #DAD8D8">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <h5 class="mb-3 text-uppercase" style="letter-spacing: 2px; color: #1f1d1d;">Sobre
+                            Nosotros</h5>
+                        <p>
+                            CCI Ingenierías fue fundada el 17 de febrero del año 2016 en la ciudad de
+                            Barranquilla bajo
+                            documento privado y posteriormente registrada en la cámara de comercio de esa ciudad
+                            el día
+                            07 de marzo del mismo año.
+                            Atraído y motivado por el auge de la dinámica comercial y el crecimiento acelerado
+                            presentado en el país y especialmente en la ciudad de Barranquilla, el ingeniero
+                            civil Jhon
+                            Deivis Mojica Ortega decide crear una empresa constructora como alternativa a las
+                            necesidades de los sectores privados y públicos.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <h5 class="mb-3 text-uppercase text-center" style="letter-spacing: 2px; color: #1f1d1d;">
+                            Información Gráfica</h5>
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <iframe src="https://www.google.com/maps/embed?..." width="48%" height="220"
+                                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe width="48%" height="220"
+                                src="https://www.youtube.com/embed/0GJ4c4QHhuw?si=QCiXRLGxPm-1S0yQ"
+                                allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="mt-auto" style="background-color: #DAD8D8">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text-uppercase" style="letter-spacing: 2px; color: #1f1d1d;">Sobre
-                        Nosotros</h5>
-                    <p>
-                        CCI Ingenierías fue fundada el 17 de febrero del año 2016 en la ciudad de
-                        Barranquilla bajo
-                        documento privado y posteriormente registrada en la cámara de comercio de esa ciudad
-                        el día
-                        07 de marzo del mismo año.
-                        Atraído y motivado por el auge de la dinámica comercial y el crecimiento acelerado
-                        presentado en el país y especialmente en la ciudad de Barranquilla, el ingeniero
-                        civil Jhon
-                        Deivis Mojica Ortega decide crear una empresa constructora como alternativa a las
-                        necesidades de los sectores privados y públicos.
-                    </p>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text-uppercase text-center" style="letter-spacing: 2px; color: #1f1d1d;">
-                        Información Gráfica</h5>
-                    <div class="d-flex justify-content-between flex-wrap">
-                        <iframe src="https://www.google.com/maps/embed?..." width="48%" height="220" style="border:0;"
-                            allowfullscreen="" loading="lazy"></iframe>
-                        <iframe width="48%" height="220"
-                            src="https://www.youtube.com/embed/0GJ4c4QHhuw?si=QCiXRLGxPm-1S0yQ"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2025 Copyright: <a class="text-dark">Proyecto Universitario</a>
             </div>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2025 Copyright: <a class="text-dark">Proyecto Universitario</a>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="../js/cerrarsesion.js"></script>
-    <script src="../js/sweetalert.js"></script>
-    <script src="../js/Dashboard.js"></script>
-    <script src="../js/ingreso.js"></script>
-    <script src="../js/salida.js"></script>
-    <script src="../js/totalbene.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="../js/cerrarsesion.js"></script>
+        <script src="../js/sweetalert.js"></script>
+        <script src="../js/Dashboard.js"></script>
+        <script src="../js/ingreso.js"></script>
+        <script src="../js/salida.js"></script>
+        <script src="../js/totalbene.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
 
