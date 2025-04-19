@@ -30,12 +30,12 @@
                             datasets: [{
                                 data: [beneficiario, restante],
                                 backgroundColor: [
-                                    'rgba(227, 0, 0, 0.7)',       // rojo principal
-                                    'rgba(201, 203, 207, 0.3)'    // gris suave de fondo
+                                    'rgba(227, 0, 0, 0.7)',
+                                    'rgba(201, 203, 207, 0.7)'    // gris suave de fondo
                                 ],
                                 borderColor: [
                                     'rgba(0, 0, 0, 0.7)',
-                                    'rgba(0, 0, 0, 0.2)'
+                                    'rgba(0, 0, 0, 0.7)',
                                 ],
                                 borderWidth: [1, 1]
                             }]
