@@ -115,34 +115,40 @@
                 Tabla de Funcionarios
             </h3>
 
-                <!-- Contenedor de la tabla de Empleados -->
-                <div id="contenedorTablaA" class="table-responsive">
-                    <table class="table table-bordered table-striped text-center w-100">
-                        <thead class="table-danger">
-                            <tr>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Documento</th>
-                                <th>Usuario</th>
-                                <th>Contraseña</th>
-                                <th>Rol</th>
-                                <th>Acciones</th>
 
-                            </tr>
-                        </thead>
-                        <tbody id="tablaEmpleados"></tbody>
-                    </table>
-                </div>
+        <!-- Contenedor de la tabla de Empleados -->
+<div class="container flex-grow-1 my-4 d-flex justify-content-center">
+    <div class="bg-light p-4 rounded shadow-lg w-100" style="max-width: 1000px;">
+        <h3 class="text-center mb-4">
+            Tabla de Empleados
+        </h3>
 
-                <!-- Botones en una sola fila -->
-                <div class="d-flex justify-content-center gap-3 mt-4">
-                    <button class="btn btn-danger px-4" onclick="cargarYMostrarEmpleados()">Mostrar Tablas</button>
-                    <button class="btn btn-danger px-4" onclick="ocultarEmpleado()">Ocultar</button>
-
-                </div>
-            </div>
+        <div id="contenedorTablaA" class="table-responsive">
+            <table class="table table-bordered table-striped text-center w-100">
+                <thead class="table-danger">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Documento</th>
+                        <th>Usuario</th>
+                        <th>Contraseña</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaEmpleados"></tbody>
+            </table>
         </div>
+
+        <!-- Botones en una sola fila -->
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <button class="btn btn-danger px-4" onclick="cargarYMostrarEmpleados()">Mostrar Tablas</button>
+            <button class="btn btn-danger px-4" onclick="ocultarEmpleado()">Ocultar</button>
+        </div>
+    </div>
+</div>
+
 
         <!-- Modal de Edición Empleado -->
         <div class="modal fade" id="modalEditarEmpleado" tabindex="-1" aria-labelledby="modalEditarLabel"
