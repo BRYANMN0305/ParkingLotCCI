@@ -109,88 +109,94 @@
     </nav>
 
     <!-- Contenedor principal que abarca toda la pantalla -->
-    <<div class="container-fluid">
+    <div class="container-fluid">
         <div class="main-panel">
             <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <h5 class="text-titlecase mb-4">Estadísticas generales</h5>
+                        <div class="row d-flex justify-content-between">
 
-                <!-- Título principal, arriba -->
-                <div class="row mb-4">
-                    <div class="col-12">
-                        <h5 class="text-titlecase">Estadísticas generales</h5>
-                    </div>
-                </div>
-
-                <div class="row g-4">
-                    <!-- Columna izquierda: Ingresos + Salidas apilados -->
-                    <div class="col-lg-4 d-flex flex-column gap-4">
-                        <!-- Ingresos -->
-                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
-                            <div class="card-body d-flex flex-column justify-content-between">
-                                <!-- mismo tag y clases que el otro -->
-                                <p class="text-center mb-2 text-muted">Ingresos del día</p>
-                                <div class="position-relative mx-auto" style="width:150px; height:150px;">
-                                    <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
-                                    <div id="valorCentro"
-                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                        style="font-size:22px; color:#333; pointer-events:none;"></div>
+                            <div class="container my-4">
+                                <div class="row">
+                            
+                                    <!-- Columna izquierda: 3 tarjetas -->
+                                    <div class="col-lg-4 d-flex flex-column gap-4">
+                                        <!-- Ingresos -->
+                                        <div class="card bg-light p-4 rounded-4 shadow-lg w-100" style="border: none;">
+                                            <div class="card-body d-flex flex-column justify-content-between">
+                                                <p class="text-center mb-2 text-muted">Ingresos del día</p>
+                                                <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
+                                                    <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
+                                                    <div id="valorCentro"
+                                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
+                                                        style="font-size: 22px; color: #333; pointer-events: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Salidas -->
+                                        <div class="card bg-light p-4 rounded-4 shadow-lg w-100" style="border: none;">
+                                            <div class="card-body d-flex flex-column justify-content-between">
+                                                <p class="text-center mb-2 text-muted">Salidas del día</p>
+                                                <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
+                                                    <canvas id="graficoSalida" class="w-100 h-100"></canvas>
+                                                    <div id="valorMedio"
+                                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
+                                                        style="font-size: 22px; color: #333; pointer-events: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Beneficiarios -->
+                                        <div class="card bg-light p-4 rounded-4 shadow-lg w-100" style="border: none;">
+                                            <div class="card-body d-flex flex-column justify-content-between">
+                                                <p class="text-center mb-2 text-muted">Total Beneficiarios registrados</p>
+                                                <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
+                                                    <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
+                                                    <div id="valorMitad"
+                                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
+                                                        style="font-size: 22px; color: #333; pointer-events: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <!-- Columna derecha: Estado de los Puestos -->
+                                    <div class="col-lg-8 d-flex flex-column justify-content-center">
+                                        <h5 class="mb-3 text-center mt-3">Estado de los Puestos</h5>
+                                        <div class="card bg-light rounded-4 shadow-lg w-100 p-4" style="border: none;">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-start flex-wrap mb-3">
+                                                    <p class="mb-0">Disponibilidad Actual</p>
+                                                </div>
+                                                <div id="puestos-container" class="puestos-grid"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Salidas -->
-                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
-                            <div class="card-body d-flex flex-column justify-content-between">
-                                <p class="text-center mb-2 text-muted">Salidas del día</p>
-                                <div class="position-relative mx-auto" style="width:150px; height:150px;">
-                                    <canvas id="graficoSalida" class="w-100 h-100"></canvas>
-                                    <div id="valorMedio"
-                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                        style="font-size:22px; color:#333; pointer-events:none;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Columna derecha: Estado de los Puestos alineado a la par -->
-                    <div class="row mb-2">
-                        <div class="col-12">
-                            <h5 class="text-titlecase">Estadísticas generales</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-8 d-flex">
-                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4 flex-fill">
-                            <div class="card-body d-flex flex-column justify-content-between">
-                                <!-- ahora es un <p> como en las otras cards -->
-                                <p class="text-center mb-2">Disponibilidad Actual</p>
-                                <div id="puestos-container" class="puestos-grid flex-grow-1 overflow-auto"></div>
-                            </div>
-                        </div>
-                    </div>
+                            
                 </div>
-
-
             </div>
         </div>
-        </div>
-
 
         <!-- Footer -->
         <footer class="mt-auto" style="background-color: #DAD8D8">
             <div class="container p-4">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 mb-4">
-                        <h5 class="mb-3 text-uppercase" style="letter-spacing: 2px; color: #1f1d1d;">Sobre
-                            Nosotros</h5>
+                        <h5 class="mb-3 text-uppercase" style="letter-spacing: 2px; color: #1f1d1d;">Sobre Nosotros</h5>
                         <p>
-                            CCI Ingenierías fue fundada el 17 de febrero del año 2016 en la ciudad de
-                            Barranquilla bajo
-                            documento privado y posteriormente registrada en la cámara de comercio de esa ciudad
-                            el día
+                            CCI Ingenierías fue fundada el 17 de febrero del año 2016 en la ciudad de Barranquilla bajo
+                            documento privado y posteriormente registrada en la cámara de comercio de esa ciudad el día
                             07 de marzo del mismo año.
                             Atraído y motivado por el auge de la dinámica comercial y el crecimiento acelerado
-                            presentado en el país y especialmente en la ciudad de Barranquilla, el ingeniero
-                            civil Jhon
+                            presentado en el país y especialmente en la ciudad de Barranquilla, el ingeniero civil Jhon
                             Deivis Mojica Ortega decide crear una empresa constructora como alternativa a las
                             necesidades de los sectores privados y públicos.
                         </p>
