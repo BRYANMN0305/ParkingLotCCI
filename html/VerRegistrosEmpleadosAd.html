@@ -108,75 +108,180 @@
 <body>
 
 
-    <!-- Contenedor principal -->
-    <main class="container flex-grow-1 my-4 d-flex justify-content-center">
-        <div class="bg-light p-4 rounded shadow-lg w-100" style="max-width: 1000px;">
-            <h3 class="text-center mb-4">Tabla de Empleados</h3>
+    <!-- Contenedor principal que abarca toda la pantalla -->
+    <div class="container flex-grow-1 my-4 d-flex justify-content-center">
+        <!-- Contenedor general centrado con fondo claro y sombra -->
+        <div class="container flex-grow-1 my-4 d-flex justify-content-center">
+            <div class="bg-light p-4 rounded shadow-lg w-100" style="max-width: 1000px;">
+                <h3 class="text-center mb-4 border border-danger rounded p-2 shadow-sm bg-white">
+                    Tabla de Empleados
+                </h3>
 
-            <!-- Tabla -->
-            <div id="contenedorTablaA" class="table-responsive">
-                <table class="table table-bordered table-striped text-center w-100">
-                    <thead class="table-danger">
-                        <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Documento</th>
-                            <th>Usuario</th>
-                            <th>Contraseña</th>
-                            <th>Rol</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaEmpleados"></tbody>
-                </table>
-            </div>
+                <!-- Contenedor de la tabla de Empleados -->
+                <div id="contenedorTablaA" class="table-responsive">
+                    <table class="table table-bordered table-striped text-center w-100">
+                        <thead class="table-danger">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Documento</th>
+                                <th>Usuario</th>
+                                <th>Contraseña</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaEmpleados"></tbody>
+                    </table>
+                </div>
 
-            <!-- Botones -->
-            <div class="d-flex justify-content-center gap-3 mt-4">
-                <button class="btn btn-danger px-4" onclick="cargarYMostrarEmpleados()">Mostrar Tablas</button>
-                <button class="btn btn-danger px-4" onclick="ocultarEmpleado()">Ocultar</button>
+                <!-- Botones en una sola fila -->
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <button class="btn btn-danger px-4" onclick="cargarYMostrarEmpleados()">Mostrar Tablas</button>
+                    <button class="btn btn-danger px-4" onclick="ocultarEmpleado()">Ocultar</button>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Modal Editar Empleado -->
-    <!-- ... (sin cambios en los modals para abreviar, ya están bien estructurados) ... -->
 
-    <!-- Footer -->
-    <footer class="mt-auto" style="background-color: #DAD8D8">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <h5 class="text-uppercase" style="letter-spacing: 2px;">Sobre Nosotros</h5>
-                    <p>
-                        CCI Ingenierías fue fundada el 17 de febrero del año 2016 en la ciudad de Barranquilla...
-                    </p>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <h5 class="text-uppercase text-center" style="letter-spacing: 2px;">Información Gráfica</h5>
-                    <div class="d-flex justify-content-between flex-wrap">
-                        <iframe src="https://www.google.com/maps/embed?..." width="48%" height="220" style="border:0;"
-                            allowfullscreen="" loading="lazy"></iframe>
-                        <iframe width="48%" height="220" src="https://www.youtube.com/embed/0GJ4c4QHhuw"
-                            allowfullscreen></iframe>
+
+        <!-- Modal de Edición Empleado -->
+        <div class="modal fade" id="modalEditarEmpleado" tabindex="-1" aria-labelledby="modalEditarLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalEditarLabel">Editar Empleado</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formEditarEmpleado">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control border" placeholder="ID del Empleado"
+                                            id="idEmpleado" disabled>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control border" placeholder="Nombre"
+                                            id="nombreEmpleado">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control border" placeholder="Apellido"
+                                            id="apellidoEmpleado">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control border" placeholder="Usuario"
+                                            id="usuarioEmpleado">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="password" class="form-control border" placeholder="Contraseña"
+                                            id="contrasenaEmpleado">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control border" placeholder="Documento"
+                                            id="documentoEmpleado">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <select class="form-select border" id="rolEmpleado">
+                                            <option value="" disabled selected>Cargo</option>
+                                            <option value="Administrador">Administrador</option>
+                                            <option value="Asesor">Asesor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <input type="button" class="btn btn-danger w-100 mt-3" value="Guardar Cambios"
+                                    onclick="actualizarempleados()">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2025 Copyright:
-            <a class="text-dark" href="#">Proyecto Universitario</a>
-        </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="../js/mostrarempleados.js"></script>
-    <script src="../js/sweetalert.js"></script>
-    <script src="../js/cerrarsesion.js"></script>
+        <!-- Modal de Edición -->
+        <div class="modal fade" id="editarBeneficiarioModal" tabindex="-1" aria-labelledby="editarBeneficiarioLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarBeneficiarioLabel">Editar Beneficiario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formEditarBeneficiario">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellido" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="apellido">
+                            </div>
+                            <div class="mb-3">
+                                <label for="documento" class="form-label">Documento</label>
+                                <input type="text" class="form-control" id="documento">
+                            </div>
+                            <button type="submit" class="btn btn-danger">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Footer -->
+        <footer class="mt-auto" style="background-color: #DAD8D8">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <h5 class="mb-3 text-uppercase" style="letter-spacing: 2px; color: #1f1d1d;">Sobre Nosotros
+                        </h5>
+                        <p>
+                            CCI Ingenierías fue fundada el 17 de febrero del año 2016 en la ciudad de Barranquilla
+                            bajo
+                            documento privado y posteriormente registrada en la cámara de comercio de esa ciudad el
+                            día
+                            07 de marzo del mismo año.
+                            Atraído y motivado por el auge de la dinámica comercial y el crecimiento acelerado
+                            presentado en el país y especialmente en la ciudad de Barranquilla, el ingeniero civil
+                            Jhon
+                            Deivis Mojica Ortega decide crear una empresa constructora como alternativa a las
+                            necesidades de los sectores privados y públicos.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <h5 class="mb-3 text-uppercase text-center" style="letter-spacing: 2px; color: #1f1d1d;">
+                            Información Gráfica</h5>
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <iframe src="https://www.google.com/maps/embed?..." width="48%" height="220"
+                                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe width="48%" height="220"
+                                src="https://www.youtube.com/embed/0GJ4c4QHhuw?si=QCiXRLGxPm-1S0yQ"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2025 Copyright: <a class="text-dark">Proyecto Universitario</a>
+            </div>
+        </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="../js/mostrarempleados.js"></script>
+        <script src="../js/sweetalert.js"></script>
+        <script src="../js/cerrarsesion.js"></script>
+
 
 </body>
 
