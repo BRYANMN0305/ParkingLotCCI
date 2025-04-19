@@ -8,7 +8,7 @@
                 return response.json();
             })
             .then(data => {
-                const beneficiario = data.total_bene ?? 0;
+                const beneficiario = data.total_beneficiarios ?? 0;
                 const totalMaximo = 100; // o un valor fijo de referencia
                 const restante = totalMaximo - beneficiario;
 
