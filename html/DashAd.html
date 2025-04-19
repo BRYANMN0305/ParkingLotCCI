@@ -120,13 +120,13 @@
                     </div>
                 </div>
 
-                <!-- Fila 1: Ingresos, Salidas  |  Estado de los Puestos -->
                 <div class="row g-4">
-                    <!-- Ingresos + Salidas en columna -->
+                    <!-- Columna izquierda: Ingresos + Salidas apilados -->
                     <div class="col-lg-4 d-flex flex-column gap-4">
                         <!-- Ingresos -->
                         <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
                             <div class="card-body d-flex flex-column justify-content-between">
+                                <!-- mismo tag y clases que el otro -->
                                 <p class="text-center mb-2 text-muted">Ingresos del día</p>
                                 <div class="position-relative mx-auto" style="width:150px; height:150px;">
                                     <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
@@ -151,35 +151,24 @@
                         </div>
                     </div>
 
-                    <!-- Estado de los Puestos al lado derecho, misma altura -->
+                    <!-- Columna derecha: Estado de los Puestos alineado a la par -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h5 class="text-titlecase">Estadísticas generales</h5>
+                        </div>
+                    </div>
+                    
                     <div class="col-lg-8 d-flex">
                         <div class="card bg-light rounded-4 shadow-lg border-0 p-4 flex-fill">
-                            <div class="card-body d-flex flex-column h-100">
-                                <h6 class="text-center mb-3">Estado de los Puestos</h6>
-                                <p class="mb-3">Disponibilidad Actual</p>
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <!-- ahora es un <p> como en las otras cards -->
+                                <p class="text-center mb-2">Disponibilidad Actual</p>
                                 <div id="puestos-container" class="puestos-grid flex-grow-1 overflow-auto"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Fila 2: Total Beneficiarios -->
-                <div class="row mt-4">
-                    <div class="col-lg-4">
-                        <div class="card bg-light rounded-4 shadow-lg border-0 p-4">
-                            <div class="card-body d-flex flex-column justify-content-between">
-                                <p class="text-center mb-2 text-muted">Total Beneficiarios registrados</p>
-                                <div class="position-relative mx-auto" style="width:150px; height:150px;">
-                                    <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
-                                    <div id="valorMitad"
-                                        class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                        style="font-size:22px; color:#333; pointer-events:none;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Fila 2 -->
 
             </div>
         </div>
