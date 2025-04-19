@@ -105,19 +105,16 @@
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col-xl-12">
-                        <h5 class="text-titlecase mb-4">Estadísticas generales</h5>
-                        <div class="row d-flex justify-content-between">
+                        <h5 class="text-titlecase mb-4 ms-5">Estadísticas generales</h5>
+                        <div class="row justify-content-center g-2 my-2 mb-3">
 
                             <!-- Contenedor Ingreso -->
-                            <div class="col-md-4 d-flex grid-margin stretch-card">
-                                <div class="card w-100">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card bg-light p-4 rounded-4 shadow-lg w-100"
+                                    style="max-width: 380px; border: none;">
                                     <div class="card-body d-flex flex-column justify-content-between">
-                                        <div class="text-center mb-2">
-                                            <p class="mb-0 text-muted">Ingresos del día</p>
-                                        </div>
+                                        <p class="text-center mb-4 text-muted">Ingresos del día</p>
 
-
-                                        <!-- Gráfico más pequeño y bien centrado -->
                                         <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
                                             <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
                                             <div id="valorCentro"
@@ -125,21 +122,17 @@
                                                 style="font-size: 22px; color: #333; pointer-events: none;">
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
 
-
                             <!-- Contenedor Salida -->
-                            <div class="col-md-4 d-flex grid-margin stretch-card">
-                                <div class="card w-100">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card bg-light p-4 rounded-4 shadow-lg w-100"
+                                    style="max-width: 380px; border: none;">
                                     <div class="card-body d-flex flex-column justify-content-between">
-                                        <div class="text-center mb-2">
-                                            <p class="mb-0 text-muted">Salidas del día</p>
-                                        </div>
+                                        <p class="text-center mb-4 text-muted">Salidas del día</p>
 
-                                        <!-- Gráfico más pequeño y bien centrado -->
                                         <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
                                             <canvas id="graficoSalida" class="w-100 h-100"></canvas>
                                             <div id="valorMedio"
@@ -152,14 +145,12 @@
                             </div>
 
                             <!-- Contenedor Total Beneficiarios -->
-                            <div class="col-md-4 d-flex grid-margin stretch-card">
-                                <div class="card w-100">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card bg-light p-4 rounded-4 shadow-lg w-100"
+                                    style="max-width: 380px; border: none;">
                                     <div class="card-body d-flex flex-column justify-content-between">
-                                        <div class="text-center mb-2">
-                                            <p class="mb-0 text-muted">Total Beneficiarios registrados</p>
-                                        </div>
+                                        <p class="text-center mb-4 text-muted">Total Beneficiarios registrados</p>
 
-                                        <!-- Gráfico más pequeño y bien centrado -->
                                         <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
                                             <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
                                             <div id="valorMitad"
@@ -170,28 +161,26 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
+                        <!-- Contenedor Estado de los puestos -->
+                        <div class="col-xl-12 grid-margin stretch-card flex-column mb-4">
+                            <h5 class="mb-2 text-titlecase mb-5 mt-5 ms-5">Estado de los Puestos</h5>
 
-                    </div>
-
-                    <!-- Contenedor Estado de los puestos -->
-                    <div class="col-xl-12 grid-margin stretch-card flex-column mb-4 ">
-                        <h5 class="mb-2 text-titlecase mb-4 mt-3">Estado de los Puestos</h5>
-                        <div class="row h-100 w-80">
-                            <div class="col-md-12 stretch-card">
-                                <div class="card">
+                            <div class="d-flex justify-content-center">
+                                <div class="card bg-light rounded-4 shadow-lg w-100 p-4"
+                                    style="max-width: 1280px; border: none;">
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                            <div>
-                                                <p class="mb-3">Disponibilidad Actual</p>
-                                            </div>
+                                        <div class="d-flex justify-content-between align-items-start flex-wrap mb-3">
+                                            <p class="mb-0">Disponibilidad Actual</p>
                                         </div>
                                         <div id="puestos-container" class="puestos-grid"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
