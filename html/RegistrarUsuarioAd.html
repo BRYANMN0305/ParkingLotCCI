@@ -95,36 +95,36 @@
     </nav>
 
 
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="p-5 rounded-4 shadow-sm w-100" style="max-width: 600px; background-color: #f8f3f3; border: 2px solid #600;">
-            <h3 class="fw-bold mb-2 text-center" style="color: #600;">Registrar Beneficiario</h3>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+        <div class="p-5 rounded-4 shadow w-100 bg-white" style="max-width: 600px;">
+            <h3 class="fw-bold mb-2 text-center text-dark">Registrar Beneficiario</h3>
             <p class="text-center text-muted mb-4">Llena la información requerida para registrar un beneficiario</p>
     
             <form id="register-form">
-                <div class="row g-3">
+                <div class="row g-4">
                     <div class="col-md-6">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control border-2" id="nombre" placeholder="Nombre" style="border-color: #600;">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                     </div>
                     <div class="col-md-6">
                         <label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control border-2" id="apellido" placeholder="Apellido" style="border-color: #600;">
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellido">
                     </div>
                     <div class="col-md-6">
                         <label for="documento" class="form-label">Documento</label>
-                        <input type="number" class="form-control border-2" id="documento" placeholder="Documento" style="border-color: #600;">
+                        <input type="number" class="form-control" id="documento" placeholder="Documento">
                     </div>
                     <div class="col-md-6">
                         <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="number" class="form-control border-2" id="telefono" placeholder="Teléfono" style="border-color: #600;">
+                        <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
                     </div>
                     <div class="col-md-6">
                         <label for="placa" class="form-label">Placa del Vehículo</label>
-                        <input type="text" class="form-control border-2" id="placa" placeholder="Ej: ABC123" style="border-color: #600;">
+                        <input type="text" class="form-control" id="placa" placeholder="Ej: ABC123">
                     </div>
                     <div class="col-md-6">
                         <label for="tipovehiculo" class="form-label">Tipo de Vehículo</label>
-                        <select class="form-select border-2" id="tipovehiculo" style="border-color: #600;">
+                        <select class="form-select" id="tipovehiculo">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Carro">Carro</option>
                             <option value="Moto">Moto</option>
@@ -133,21 +133,22 @@
                     </div>
                     <div class="col-md-6">
                         <label for="usuario" class="form-label">Usuario</label>
-                        <input type="text" class="form-control border-2" id="usuario" placeholder="Usuario" maxlength="10" minlength="10" style="border-color: #600;">
+                        <input type="text" class="form-control" id="usuario" placeholder="Usuario" maxlength="10" minlength="10">
                     </div>
                     <div class="col-md-6">
                         <label for="contrasena" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control border-2" id="contrasena" placeholder="Contraseña" style="border-color: #600;">
+                        <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
                     </div>
                 </div>
     
                 <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-secondary">Atrás</button>
-                    <button type="button" class="btn text-white" style="background-color: #600;" onclick="enviarformruAd()">Registrar</button>
+                    <button type="button" class="btn btn-primary" onclick="enviarformruAd()">Registrar</button>
                 </div>
             </form>
         </div>
     </div>
+    
     
 
 
