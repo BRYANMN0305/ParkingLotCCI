@@ -197,7 +197,7 @@ input[type="button"].btn:hover {
     opacity: 1;
 }
 .fondo-personalizado {
-    background-image: url('../img/centro-comercial-borroso-abstracto_74190-4977.avif');
+    background-image: url('../img/background_index.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
