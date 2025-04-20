@@ -10,9 +10,8 @@
     overflow: hidden;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
-    padding: 2%;
+    padding: 2%s;
 }
-
 #chat-icon {
     position: fixed;
     bottom: 20px;
@@ -26,7 +25,6 @@
     align-items: center;
     color: white;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #chatbot-container.open {
@@ -74,21 +72,37 @@
     cursor: pointer;
 }
 
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #6d0b0b;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 #question-suggestions {
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
+
+    padding: 10px 0; /* Ajusta el relleno superior e inferior */
 }
 
 #question-suggestions div {
     background-color: #f1f1f1;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px 10px; /* Espaciado interno para que las preguntas no se vean juntas */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 #question-suggestions div:hover {
-    background-color: #bc9090;
+    background-color: #bc9090; /* Cambio de color al pasar el cursor */
 }
