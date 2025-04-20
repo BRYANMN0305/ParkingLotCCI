@@ -20,38 +20,45 @@
 
 <body>
 
-    <section class="vh-100 d-flex align-items-center justify-content-center">
+    <section class="vh-100 d-flex align-items-center justify-content-center" style="background-color: #868484c5">
         <div class="container py-5" style="max-width: 900px;">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-12">
-                    <div class="card animate__animated animate__fadeIn">
+                    <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-sm-12 col-md-5 d-flex align-items-center">
                                 <img src="img/transcript-lot-1.jpg" alt="login form" class="img-fluid w-100"
-                                    style="border-radius: 1.5rem 0 0 1.5rem; height: 100%; object-fit: cover; min-height: 300px;" />
+                                    style="border-radius: 1rem 0 0 1rem; height: 100%; object-fit: cover; min-height: 300px;" />
                             </div>
                             <div class="col-sm-12 col-md-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
                                     <form>
 
-                                        <div class="d-flex align-items-center mb-3 pb-1 justify-content-center">
-                                            <span class="h2 fw-bold mb-0 text-center" style="color: #6d0b0b;">CCI Ingenierías Parking Lot</span>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <span class="h2 fw-bold mb-0 text-center justify-content-center"
+                                                style="color: #6d0b0b;">CCI Ingenierías parking lot</span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3 h5 text-center" style="letter-spacing: 1px;">Ingrese a su cuenta</h5>
+                                        <h5 class="fw-normal mb-3 pb-3 h5 px-1" style="letter-spacing: 1px;">Ingrese a
+                                            su cuenta</h5>
 
-                                        <div class="form-outline mb-4">
-                                            <input type="email" id="usuario" class="form-control form-control-lg" placeholder="Correo electrónico" />
+                                        <div class="form-outline mb-4 px-1">
+                                            <input type="email" id="usuario" class="form-control form-control-lg " />
+                                            <label class="form-label h6 mt-1" for="form2Example17">Usuario</label>
                                         </div>
 
-                                        <div class="form-outline mb-4">
-                                            <input type="password" id="contrasena" class="form-control form-control-lg" placeholder="Contraseña" />
+                                        <div class="form-outline mb-4 px-1">
+                                            <input type="password" id="contrasena"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label h6 mt-1" for="form2Example27">Contraseña</label>
                                         </div>
 
                                         <div class="pt-1 mb-4 d-flex justify-content-center">
-                                            <input type="button" value="Iniciar Sesión" class="btn btn-custom btn-lg" onclick="iniciarSesion()">
+                                            <input type="button" value="Iniciar Sesión"
+                                                class="btn btn-lg py-2 px-3 text-white text-decoration-none"
+                                                style="background-color: #6d0b0b; border-color: #6d0b0b;"
+                                                onclick="iniciarSesion()">
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
@@ -62,7 +69,7 @@
         </div>
     </section>
 
-    <!-- Botones flotantes -->
+
     <div id="chat-icon" onclick="toggleChatBot()"
         style="width: 50px; height: 50px; background-color: #6d0b0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: fixed; bottom: 20px; right: 20px;">
         <img src="img/bot.png" alt="Chat Icon" style="width: 30px; height: 30px;">
@@ -73,13 +80,13 @@
         <img src="img/formulario-de-contacto.png" alt="Contact Icon" style="width: 30px; height: 30px;">
     </div>
 
-    <!-- Modal de contacto -->
+
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #6d0b0b; color: aliceblue;">
                     <h5 class="modal-title" id="contactModalLabel">Contáctenos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="contactForm">
@@ -90,22 +97,28 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" for="phone">Teléfono</label>
-                            <input class="form-control" name="telefono" id="telefono" type="tel" placeholder="Teléfono" />
+                            <label class="form-label" for="phone">Telefono</label>
+                            <input class="form-control" name="telefono" id="telefono" type="tel"
+                                placeholder="Telefono" />
                         </div>
+
 
                         <div class="mb-3">
                             <label class="form-label" for="email">Correo Electrónico</label>
-                            <input class="form-control" name="email" id="email" type="email" placeholder="Correo Electrónico" />
+                            <input class="form-control" name="email" id="email" type="email"
+                                placeholder="Correo Electrónico" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label" for="message">Mensaje</label>
-                            <textarea class="form-control" name="mensaje" id="mensaje" placeholder="Mensaje" style="height: 10rem;"></textarea>
+                            <textarea class="form-control" name="mensaje" id="mensaje" placeholder="Mensaje"
+                                style="height: 10rem;"></textarea>
                         </div>
 
+
                         <div class="d-grid">
-                            <input class="btn btn-custom btn-lg" type="button" value="Enviar" onclick="enviar()">
+                            <input class="btn btn-lg" type="button" value="Enviar" onclick="enviar()"
+                                style="background-color: #6d0b0b; color: aliceblue;">
                         </div>
 
                     </form>
@@ -114,10 +127,11 @@
         </div>
     </div>
 
-    <!-- Chatbot -->
-    <div id="chatbot-container" class="position-fixed" style="bottom: 90px; right: 20px; width: 300px; background: white; border-radius: 15px; display: none;">
+
+    <div id="chatbot-container">
+
         <div class="chatbot-header" onclick="toggleChatBot()">
-            <h4 class="m-0 text-center">Asistente Virtual</h4>
+            <h4>Asistente Virtual</h4>
         </div>
 
         <div class="chatbot-messages">
@@ -125,11 +139,12 @@
         </div>
 
         <div class="chatbot-input">
-            <input type="text" id="user-input" class="form-control" placeholder="Escribe tu mensaje..." onfocus="showSuggestions()" />
-            <button class="btn btn-custom ms-2" onclick="sendMessage()">Enviar</button>
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje..." onfocus="showSuggestions()" />
+            <button onclick="sendMessage()">Enviar</button>
         </div>
 
-        <div id="question-suggestions" class="suggestions p-2">
+
+        <div id="question-suggestions" class="suggestions">
             <div onclick="selectSuggestion('¿Cuál es tu horario de atención?')">¿Cuál es tu horario de atención?</div>
             <div onclick="selectSuggestion('¿Quienes somos?')">¿Quienes somos?</div>
             <div onclick="selectSuggestion('¿Tienen algún servicio especial?')">¿Tienen algún servicio especial?</div>
