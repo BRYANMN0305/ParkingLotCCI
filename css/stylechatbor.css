@@ -11,7 +11,13 @@
     z-index: 1000;
     transition: all 0.3s ease-in-out;
     padding: 2%s;
+   
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease-in-out;
+   
 }
+
 #chat-icon {
     position: fixed;
     bottom: 20px;
@@ -25,10 +31,15 @@
     align-items: center;
     color: white;
     cursor: pointer;
+
 }
 
 #chatbot-container.open {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
+    
+    
 }
 
 .chatbot-header {
@@ -86,6 +97,7 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
 }
 #question-suggestions {
     display: flex;
@@ -105,4 +117,88 @@
 
 #question-suggestions div:hover {
     background-color: #bc9090; /* Cambio de color al pasar el cursor */
+}
+/* Animación de entrada suave para el formulario */
+.card {
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo más moderno al botón de login */
+input[type="button"].btn {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+}
+
+input[type="button"].btn:hover {
+    background-color: #8e0c0c;
+    transform: scale(1.05);
+}
+
+input[type="button"].btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.4s ease;
+    z-index: 1;
+}
+
+input[type="button"].btn:hover::after {
+    left: 100%;
+}
+
+/* Input fields con efecto focus suave */
+.form-control:focus {
+    border-color: #6d0b0b;
+    box-shadow: 0 0 0 0.2rem rgba(109, 11, 11, 0.25);
+}
+
+/* Header del formulario con fade-in */
+.h2.fw-bold {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+#chat-icon:hover,
+#contact-icon:hover,
+input[type="button"].btn:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    transition: all 0.3s ease-in-out;
+}
+.modal.fade .modal-dialog {
+    transform: translateY(50px);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    opacity: 0;
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+.fondo-personalizado {
+    background-image: url('../img/centro-comercial-borroso-abstracto_74190-4977.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
