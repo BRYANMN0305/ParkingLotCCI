@@ -37,7 +37,7 @@
                                 {
                                     label: 'Ingresos',
                                     data: datos.ingresos,
-                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderColor:'rgba(227, 0, 0, 0.7)',
                                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                                     fill: {
                                         target: 'origin',
