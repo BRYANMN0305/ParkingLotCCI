@@ -27,7 +27,6 @@ pip install qrcode
 
 
 
-
 --> instalar fast api
 pip install "fastapi[standard]"
 
