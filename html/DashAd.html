@@ -110,100 +110,99 @@
     </nav>
 
     <!-- Contenedor principal que abarca toda la pantalla -->
-    <div class="container-fluid" style="background-color: #bcbcbc;">
-        <div class="main-panel">
-            <div class="content-wrapper">
-                <div class="row">
-                    <div class="col-xl-12">
+<div class="container-fluid" style="background-color: #bcbcbc;">
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-xl-12">
 
-                        <div class="col-12 d-flex justify-content-center mt-3">
-                            <div class="card bg-light p-2 rounded-4 shadow-lg w-100" style=" max-width: 1000px; border: none;">
+                    <!-- Card del Título Principal -->
+                    <div class="col-12 d-flex justify-content-center mt-3">
+                        <div class="card bg-light py-2 px-4 rounded-4 shadow-lg w-100" style="max-width: 1140px; height: 80px; border: none;">
+                            <div class="card-body d-flex align-items-center justify-content-center p-0">
+                                <h5 class="text-center text-muted m-0">Estadísticas Generales</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjetas de gráficos -->
+                    <div class="row justify-content-center g-2 my-2 mb-3">
+
+                        <!-- Contenedor Ingreso -->
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card bg-light p-4 rounded-4 shadow-lg w-100" style="max-width: 380px; border: none;">
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h5 class="text-center mb-4 mt-3 text-muted">Estadísticas Generales</h5>
+                                    <p class="text-center mb-4 text-muted">Ingresos del día</p>
+
+                                    <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
+                                        <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
+                                        <div id="valorCentro" class="position-absolute top-50 start-50 translate-middle fw-bold text-center" style="font-size: 22px; color: #333; pointer-events: none;"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row justify-content-center g-2 my-2 mb-3">
+                        <!-- Contenedor Salida -->
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card bg-light p-4 rounded-4 shadow-lg w-100" style="max-width: 380px; border: none;">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <p class="text-center mb-4 text-muted">Salidas del día</p>
 
-                            <!-- Contenedor Ingreso -->
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card bg-light p-4 rounded-4 shadow-lg w-100"
-                                    style="max-width: 380px; border: none;">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <p class="text-center mb-4 text-muted">Ingresos del día</p>
-
-                                        <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
-                                            <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
-                                            <div id="valorCentro"
-                                                class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size: 22px; color: #333; pointer-events: none;">
-                                            </div>
-                                        </div>
+                                    <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
+                                        <canvas id="graficoSalida" class="w-100 h-100"></canvas>
+                                        <div id="valorMedio" class="position-absolute top-50 start-50 translate-middle fw-bold text-center" style="font-size: 22px; color: #333; pointer-events: none;"></div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Contenedor Salida -->
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card bg-light p-4 rounded-4 shadow-lg w-100"
-                                    style="max-width: 380px; border: none;">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <p class="text-center mb-4 text-muted">Salidas del día</p>
-
-                                        <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
-                                            <canvas id="graficoSalida" class="w-100 h-100"></canvas>
-                                            <div id="valorMedio"
-                                                class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size: 22px; color: #333; pointer-events: none;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Contenedor Total Beneficiarios -->
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card bg-light p-4 rounded-4 shadow-lg w-100"
-                                    style="max-width: 380px; border: none;">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <p class="text-center mb-4 text-muted">Total Beneficiarios registrados</p>
-
-                                        <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
-                                            <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
-                                            <div id="valorMitad"
-                                                class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size: 22px; color: #333; pointer-events: none;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
 
-                        <!-- Contenedor Estado de los puestos -->
-                        <div class="col-xl-12 grid-margin stretch-card flex-column mb-4">
-                            <h5 class="mb-2 text-titlecase mb-5 mt-5 ms-5">Estado de los Puestos</h5>
+                        <!-- Contenedor Total Beneficiarios -->
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card bg-light p-4 rounded-4 shadow-lg w-100" style="max-width: 380px; border: none;">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <p class="text-center mb-4 text-muted">Total Beneficiarios registrados</p>
 
-                            <div class="d-flex justify-content-center">
-                                <div class="card bg-light rounded-4 shadow-lg w-100 p-4"
-                                    style="max-width: 1280px; border: none;">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start flex-wrap mb-3">
-                                            <p class="mb-0">Disponibilidad Actual</p>
-                                        </div>
-                                        <div id="puestos-container" class="puestos-grid"></div>
+                                    <div class="position-relative mx-auto" style="width: 150px; height: 150px;">
+                                        <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
+                                        <div id="valorMitad" class="position-absolute top-50 start-50 translate-middle fw-bold text-center" style="font-size: 22px; color: #333; pointer-events: none;"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                     </div>
+
+                    <!-- Contenedor Estado de los puestos -->
+                    <div class="col-xl-12 grid-margin stretch-card flex-column mb-4">
+
+                        <!-- Card del Título Estado de Puestos -->
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="card bg-light py-2 px-4 rounded-4 shadow-lg w-100" style="max-width: 1140px; height: 80px; border: none;">
+                                <div class="card-body d-flex align-items-center justify-content-center p-0">
+                                    <h5 class="text-center text-muted m-0">Estado de los Puestos</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card de los puestos -->
+                        <div class="d-flex justify-content-center mt-3">
+                            <div class="card bg-light rounded-4 shadow-lg w-100 p-4" style="max-width: 1280px; border: none;">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-3">
+                                        <p class="mb-0">Disponibilidad Actual</p>
+                                    </div>
+                                    <div id="puestos-container" class="puestos-grid"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
     <!-- Footer -->
