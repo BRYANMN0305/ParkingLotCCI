@@ -27,14 +27,14 @@
                                 data: datos.ingresos,
                                 borderColor: 'rgba(255, 99, 132, 1)',
                                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                fill: true
+                                fill: 'origin' // Relleno hacia arriba
                             },
                             {
                                 label: 'Salidas',
-                                data: datos.salidas,
+                                data: datos.salidas.map(valor => valor * -1), // ← AQUÍ! Multiplicamos salidas * -1
                                 borderColor: 'rgba(54, 162, 235, 1)',
                                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                fill: true
+                                fill: 'origin' // Relleno hacia abajo
                             }
                         ]
                     },
