@@ -16,6 +16,11 @@
                     graficoSemanal.destroy();
                 }
 
+                // Calcular el valor máximo para escalar dinámicamente
+                const maxIngreso = Math.max(...datos.ingresos);
+                const maxSalida = Math.max(...datos.salidas);
+                const valorMaximo = Math.ceil(Math.max(maxIngreso, maxSalida) * 1.2); // 20% más para que no quede pegado
+
                 // Crear nuevo gráfico
                 graficoSemanal = new Chart(ctx, {
                     type: 'line',
@@ -27,14 +32,22 @@
                                 data: datos.ingresos,
                                 borderColor: 'rgba(255, 99, 132, 1)',
                                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                fill: 'origin' // Relleno hacia arriba
+                                fill: {
+                                    target: 'origin', // Desde el origen hacia arriba
+                                    above: 'rgba(255, 99, 132, 0.2)' // Color de relleno para arriba
+                                },
+                                tension: 0.3 // curva suave
                             },
                             {
                                 label: 'Salidas',
-                                data: datos.salidas.map(valor => valor * -1), // ← AQUÍ! Multiplicamos salidas * -1
+                                data: datos.salidas.map(valor => valor * -1),
                                 borderColor: 'rgba(54, 162, 235, 1)',
                                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                fill: 'origin' // Relleno hacia abajo
+                                fill: {
+                                    target: 'origin', // Desde el origen hacia abajo
+                                    below: 'rgba(54, 162, 235, 0.2)' // Color de relleno para abajo
+                                },
+                                tension: 0.3
                             }
                         ]
                     },
@@ -44,12 +57,23 @@
                         scales: {
                             y: {
                                 beginAtZero: true,
-                                min: -10, // ejemplo: mínimo -10
-                                max: 10,  // ejemplo: máximo 10
+                                min: -valorMaximo,
+                                max: valorMaximo,
                                 ticks: {
+                                    stepSize: 1, // Opcional: fuerza que vaya de 1 en 1
                                     callback: function(value) {
-                                        return Math.abs(value); // muestra valores positivos visualmente
+                                        return value; // Ya no convertimos a absoluto
                                     }
+                                },
+                                grid: {
+                                    color: 'rgba(0,0,0,0.1)' // líneas más suaves
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#000' // Color de las letras de la leyenda
                                 }
                             }
                         }
@@ -65,5 +89,5 @@
     }
 
     cargarGraficoSemanal();
-    setInterval(cargarGraficoSemanal, 50000);
+    setInterval(cargarGraficoSemanal, 5000);
 })();
