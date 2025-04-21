@@ -11,11 +11,11 @@
     z-index: 1000;
     transition: all 0.3s ease-in-out;
     padding: 2%s;
-   
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease-in-out;
-   
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+
 }
 
 #chat-icon {
@@ -38,8 +38,8 @@
     display: block;
     opacity: 1;
     transform: translateY(0);
-    
-    
+
+
 }
 
 .chatbot-header {
@@ -87,7 +87,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #6d0b0b;
+    background-color: #991515;
     color: white;
     border-radius: 50%;
     width: 50px;
@@ -97,27 +97,32 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    
+
 }
+
 #question-suggestions {
     display: flex;
     flex-direction: column;
 
-    padding: 10px 0; /* Ajusta el relleno superior e inferior */
+    padding: 10px 0;
+    /* Ajusta el relleno superior e inferior */
 }
 
 #question-suggestions div {
     background-color: #f1f1f1;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 5px 10px; /* Espaciado interno para que las preguntas no se vean juntas */
+    padding: 5px 10px;
+    /* Espaciado interno para que las preguntas no se vean juntas */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 #question-suggestions div:hover {
-    background-color: #bc9090; /* Cambio de color al pasar el cursor */
+    background-color: #bc9090;
+    /* Cambio de color al pasar el cursor */
 }
+
 /* Animación de entrada suave para el formulario */
 .card {
     animation: fadeInUp 0.8s ease-in-out;
@@ -128,6 +133,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -179,6 +185,7 @@ input[type="button"].btn:hover::after {
         opacity: 1;
     }
 }
+
 #chat-icon:hover,
 #contact-icon:hover,
 input[type="button"].btn:hover {
@@ -186,6 +193,7 @@ input[type="button"].btn:hover {
     transform: translateY(-3px);
     transition: all 0.3s ease-in-out;
 }
+
 .modal.fade .modal-dialog {
     transform: translateY(50px);
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
@@ -196,6 +204,7 @@ input[type="button"].btn:hover {
     transform: translateY(0);
     opacity: 1;
 }
+
 .fondo-personalizado {
     background-image: url('../img/background_index.avif');
     background-size: cover;
