@@ -32,75 +32,65 @@
                 <!-- Menú Izquierdo -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <!-- Panel Principal -->
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center" href="DashAd.html"
-                            style="padding: 5px 10px; color: white">
-                            <img src="../img/panel_principal.png" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            <span>Panel Principal</span>
-                        </a>
-                    </li>
+                   <!-- Panel Principal -->
+                   <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="DashEmp.html"
+                        style="padding: 5px 10px; color: white">
+                        <img src="../img/panel_principal.png" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        <span>Panel Principal</span>
+                    </a>
+                </li>
 
-                    <!-- Asignar Funciones -->
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center" href="../html/RegistrarRolAd.html"
-                            style="padding: 5px 10px; color: white">
-                            <img src="../img/asignar_funciones.png" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            <span>Asignar Funciones</span>
-                        </a>
-                    </li>
+                <!-- Crear Beneficiario -->
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="../html/RegistrarUsuarioEmp.html"
+                        style="padding: 5px 10px; color: white">
+                        <img src="../img/agregar-beneficiario.png" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        <span>Crear Beneficiario</span>
+                    </a>
+                </li>
 
-                    <!-- Crear Beneficiario -->
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center" href="../html/RegistrarUsuarioAd.html"
-                            style="padding: 5px 10px; color: white">
-                            <img src="../img/agregar-beneficiario.png" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            <span>Crear Beneficiario</span>
-                        </a>
-                    </li>
+                <!-- Gestión de Personal  -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="gestionarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="padding: 5px 10px; color: white">
+                        <img src="../img/gestion_personal.png" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        <span>Gestión de Personal</span>
+                    </a>
+                    <ul class="dropdown-menu text-center w-100" aria-labelledby="gestionarDropdown">
+                        <li><a class="dropdown-item w-100"
+                                href="../html/VerRegistrosEmpleadosAd.html">Administrativo</a></li>
+                        <li><a class="dropdown-item w-100" href="../html/MostrarBeneficiariosEmp.html">Beneficiario</a>
+                        </li>
+                    </ul>
+                </li>
 
-                    <!-- Gestión de Personal  -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="gestionarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            style="padding: 5px 10px; color: white">
-                            <img src="../img/gestion_personal.png" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            <span>Gestión de Personal</span>
-                        </a>
-                        <ul class="dropdown-menu text-center w-100" aria-labelledby="gestionarDropdown">
-                            <li><a class="dropdown-item w-100"
-                                    href="../html/VerRegistrosEmpleadosAd.html">Administrativo</a></li>
-                            <li><a class="dropdown-item w-100" href="../html/MostrarBeneficiarios.html">Beneficiario</a>
-                            </li>
-                        </ul>
-                    </li>
+                <!-- Movimientos -->
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="../html/RegIngresoSalidaEmp.html"
+                        style="padding: 5px 10px; color: white;">
+                        <img src="../img/movimientos.png" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        <span>Movimientos</span>
+                    </a>
+                </li>
+            </ul>
 
-                    <!-- Movimientos -->
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center" href="../html/RegIngresoSalidaAd.html"
-                            style="padding: 5px 10px; color: white;">
-                            <img src="../img/movimientos.png" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            <span>Movimientos</span>
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Botón Cerrar Sesión  -->
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center"
-                            style="padding: 5px 10px; cursor: pointer; color: white;" onclick="cerrarSesion()">
-                            <img src="../img/cerrar_sesion.png" alt="Not Found" class="img-fluid"
-                                style="width: 24px; height: 24px; margin-right: 8px;">
-                            <span>Cerrar Sesión</span>
-                        </a>
-                    </li>
-                </ul>
+            <!-- Botón Cerrar Sesión  -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center"
+                        style="padding: 5px 10px; cursor: pointer; color: white;" onclick="cerrarSesion()">
+                        <img src="../img/cerrar_sesion.png" alt="Not Found" class="img-fluid"
+                            style="width: 24px; height: 24px; margin-right: 8px;">
+                        <span>Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
 
             </div> <!-- Cierre de collapse -->
         </div> <!-- Cierre de container-fluid -->
