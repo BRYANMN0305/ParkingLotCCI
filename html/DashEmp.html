@@ -98,12 +98,23 @@
     </nav>
 
     <!-- Contenedor principal que abarca toda la pantalla -->
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: #bcbcbc;">
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col-xl-12">
-                        <h5 class="text-titlecase mb-4 ms-5">Estadísticas generales</h5>
+
+                        <!-- Card del Título Principal -->
+                        <div class="col-12 d-flex justify-content-center mt-3">
+                            <div class="card bg-light py-2 px-4 rounded-4 shadow-lg w-100"
+                                style="max-width: 1280px; height: 80px; border: none;">
+                                <div class="card-body d-flex align-items-center justify-content-center p-0">
+                                    <h5 class="text-center text-muted m-0">Estadísticas Generales</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjetas de gráficos -->
                         <div class="row justify-content-center g-2 my-2 mb-3">
 
                             <!-- Contenedor Ingreso -->
@@ -117,8 +128,7 @@
                                             <canvas id="graficoIngreso" class="w-100 h-100"></canvas>
                                             <div id="valorCentro"
                                                 class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size: 22px; color: #333; pointer-events: none;">
-                                            </div>
+                                                style="font-size: 22px; color: #333; pointer-events: none;"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -135,8 +145,7 @@
                                             <canvas id="graficoSalida" class="w-100 h-100"></canvas>
                                             <div id="valorMedio"
                                                 class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size: 22px; color: #333; pointer-events: none;">
-                                            </div>
+                                                style="font-size: 22px; color: #333; pointer-events: none;"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -153,14 +162,15 @@
                                             <canvas id="graficoBeneficiarios" class="w-100 h-100"></canvas>
                                             <div id="valorMitad"
                                                 class="position-absolute top-50 start-50 translate-middle fw-bold text-center"
-                                                style="font-size: 22px; color: #333; pointer-events: none;">
-                                            </div>
+                                                style="font-size: 22px; color: #333; pointer-events: none;"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+
+
 
                         <!-- Card de movimientos semanales -->
                         <div class="d-flex justify-content-center mt-3 mb-3">
@@ -184,11 +194,24 @@
 
 
 
+
                         <!-- Contenedor Estado de los puestos -->
                         <div class="col-xl-12 grid-margin stretch-card flex-column mb-4">
-                            <h5 class="mb-2 text-titlecase mb-5 mt-5 ms-5">Estado de los Puestos</h5>
 
-                            <div class="d-flex justify-content-center">
+
+
+                            <!-- Card del Título Estado de Puestos -->
+                            <div class="col-12 d-flex justify-content-center">
+                                <div class="card bg-light py-2 px-4 rounded-4 shadow-lg w-100"
+                                    style="max-width: 1280px; height: 80px; border: none;">
+                                    <div class="card-body d-flex align-items-center justify-content-center p-0">
+                                        <h5 class="text-center text-muted m-0">Estado de los Puestos</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card de los puestos -->
+                            <div class="d-flex justify-content-center mt-3">
                                 <div class="card bg-light rounded-4 shadow-lg w-100 p-4"
                                     style="max-width: 1280px; border: none;">
                                     <div class="card-body">
@@ -199,6 +222,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
@@ -206,6 +230,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Footer -->
     <!-- Footer -->
@@ -252,7 +277,7 @@
     <script src="../js/ingreso.js"></script>
     <script src="../js/salida.js"></script>
     <script src="../js/totalbene.js"></script>
-    <script src="../js/semanal.js" ></script>
+    <script src="../js/semanal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
