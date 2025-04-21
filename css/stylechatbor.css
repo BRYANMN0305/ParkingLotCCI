@@ -197,7 +197,7 @@ input[type="button"].btn:hover {
     opacity: 1;
 }
 .fondo-personalizado {
-    background-image: url('../img/back.avif');
+    background-image: url('../img/background_index.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
