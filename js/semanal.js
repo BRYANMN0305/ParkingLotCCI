@@ -40,7 +40,19 @@
                     },
                     options: {
                         responsive: true,
-                        maintainAspectRatio: false
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                min: -10, // ejemplo: mínimo -10
+                                max: 10,  // ejemplo: máximo 10
+                                ticks: {
+                                    callback: function(value) {
+                                        return Math.abs(value); // muestra valores positivos visualmente
+                                    }
+                                }
+                            }
+                        }
                     }
                 });
             })
