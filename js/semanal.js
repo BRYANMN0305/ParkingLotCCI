@@ -18,7 +18,7 @@
 
                         // --- Aquí reseteamos el canvas completamente ---
                         canvas.width = canvas.width;
-                        canvas.height = 400;  // Establece una altura fija o dinámica
+                        canvas.height = canvas.height;  
 
                         // Esto limpia cualquier rastro del gráfico anterior
                     }
