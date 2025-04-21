@@ -4,10 +4,10 @@ const toggleChatBot = () => {
 }
 
 const responses = {
-    '¿Cuál es tu horario de atención?': 'Nuestro horario de atención es de lunes a viernes, de 9:00 AM a 6:00 PM.',
-    '¿Quienes somos?': 'Somos una empresa constructora creada como alternativa para las necesidades de los sectores privados y públicos.',
-    '¿Tienen algún servicio especial?': 'Sí, ofrecemos servicios personalizados para empresas. Como: Diseños Hidrosanitarios y Red Contra Incendio.',
-    '¿Dónde están ubicados?': 'Estamos ubicados en la Calle 77 # 65 - 37. Ciudad: Barranquilla.'
+    '¿Para que sirve este sitio web?': 'Nuestro sitio web funciona para manejar el ingreso y salida de nuestros queridos empleados de manera eficiente y segura',
+    'Tengo dudas ¿Como puedo contactarlos?': 'Claro! Puedes contactarnos mediante nuestro formulario de contacto (click arriba de nuestro chatbot). LLena todos los caampos y no dudes en preguntar lo que te intriga, haremos lo posible por resolver tu duda lo antes posible',
+    '¿El sitio web solo sirve para dicha empresa?': 'Sí, ofrecemos un servicio estricta y unicamente para cci ingenierias. Gracias por preguntar',
+    
 };
 
 const sendMessage = () => {
