@@ -47,9 +47,6 @@ const cargarGraficoSemanal = () => {
     }
 }
 
-// Ejecuta la función cuando se cargue la página
-window.addEventListener('DOMContentLoaded', cargarGraficoSemanal);
-
 cargarGraficoSemanal();
 setInterval(cargarGraficoSemanal, 5000);
 })();
