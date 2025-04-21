@@ -1,5 +1,5 @@
 (() => {
-    let graficoSemanal = null;
+    let graficoSemanal = null; // Variable para guardar la instancia del gráfico
 
     const cargarGraficoSemanal = () => {
         try {
@@ -12,16 +12,23 @@
                     const canvas = document.getElementById('graficoSemanal');
                     const ctx = canvas.getContext('2d');
 
+                    // Si ya existe un gráfico, lo destruimos antes de crear uno nuevo
                     if (graficoSemanal) {
                         graficoSemanal.destroy();
+
+                        // --- Aquí reseteamos el canvas completamente ---
                         canvas.width = canvas.width;
-                        canvas.height = canvas.height;
+                        canvas.height = canvas.height;  
+
+                        // Esto limpia cualquier rastro del gráfico anterior
                     }
 
+                    // Calcular el valor máximo para escalar dinámicamente
                     const maxIngreso = Math.max(...datos.ingresos);
                     const maxSalida = Math.max(...datos.salidas);
                     const valorMaximo = Math.ceil(Math.max(maxIngreso, maxSalida) * 1.2);
 
+                    // Crear nuevo gráfico
                     graficoSemanal = new Chart(ctx, {
                         type: 'line',
                         data: {
@@ -88,18 +95,6 @@
         }
     }
 
-    // Usar ResizeObserver para esperar a que el canvas tenga tamaño visible antes de renderizar
-    const canvas = document.getElementById('graficoSemanal');
-
-    const observer = new ResizeObserver(() => {
-        if (canvas.offsetWidth > 0 && canvas.offsetHeight > 0) {
-            cargarGraficoSemanal();
-            observer.disconnect(); // Ya no lo necesitamos
-        }
-    });
-
-    observer.observe(canvas);
-
-    // Actualización automática cada 5 segundos
-    setInterval(cargarGraficoSemanal, 5000);
+    cargarGraficoSemanal();
+    setInterval(cargarGraficoSemanal, 500);
 })();
