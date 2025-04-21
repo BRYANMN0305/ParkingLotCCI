@@ -96,5 +96,5 @@
     }
 
     cargarGraficoSemanal();
-    setInterval(cargarGraficoSemanal, 500);
+    setInterval(cargarGraficoSemanal, 5000);
 })();
