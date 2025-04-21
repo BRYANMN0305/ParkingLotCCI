@@ -5,8 +5,8 @@ const toggleChatBot = () => {
 
 const responses = {
     '¿Para que sirve este sitio web?': 'Nuestro sitio web funciona para manejar el ingreso y salida de nuestros queridos empleados de manera eficiente y segura',
-    'Tengo dudas ¿Como puedo contactarlos?': 'Claro! Puedes contactarnos mediante nuestro formulario de contacto (click arriba de nuestro chatbot). LLena todos los caampos y no dudes en preguntar lo que te intriga, haremos lo posible por resolver tu duda lo antes posible',
-    '¿El sitio web solo sirve para dicha empresa?': 'Sí, ofrecemos un servicio estricta y unicamente para cci ingenierias. Gracias por preguntar',
+    'Tengo dudas ¿Como puedo contactarlos?': 'Claro! Puedes contactarnos mediante nuestro formulario de contacto (click arriba de nuestro chatbot). LLena todos los campos y no dudes en preguntar lo que te intriga, haremos lo posible por resolver tu duda lo antes posible',
+    '¿El sitio web solo sirve para dicha empresa?': 'Sí, ofrecemos un servicio estricta y unicamente para "cci ingenierias". Gracias por preguntar',
     
 };
 
