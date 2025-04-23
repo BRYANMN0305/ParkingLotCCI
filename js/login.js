@@ -23,6 +23,8 @@ const iniciarSesion = () => {
             // Guardar la sesión en sessionStorage
             sessionStorage.setItem("autenticado", "true");
             sessionStorage.setItem("rol", data.rol); // Guarda el rol
+            sessionStorage.setItem("token", data.access_token); // Guarda el token
+
 
             Swal.fire({
                 title: "¡Inicio de Sesión Exitoso!",
