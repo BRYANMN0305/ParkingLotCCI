@@ -2,22 +2,17 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/stylechatbor.css">
-
     <title>Iniciar Sesión - CCI Ingenierísa S.A.S</title>
 </head>
 
 <body>
 
-
+<!-- login  -->
     <section class="vh-100 d-flex align-items-center justify-content-center fondo-personalizado">
         <div class="container py-5" style="max-width: 900px;">
 
@@ -76,17 +71,19 @@
     </section>
 
 
+    <!-- chatbot boton -->
     <div id="chat-icon" onclick="toggleChatBot()"
         style="width: 50px; height: 50px; background-color: #6d0b0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: fixed; bottom: 20px; right: 20px;">
         <img src="img/bot.png" alt="Chat Icon" style="width: 30px; height: 30px;">
     </div>
 
+        <!-- Contacto boton -->
     <div id="contact-icon" data-bs-toggle="modal" data-bs-target="#contactModal"
         style="width: 50px; height: 50px; background-color: #6d0b0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: fixed; bottom: 80px; right: 20px;">
         <img src="img/formulario-de-contacto.png" alt="Contact Icon" style="width: 30px; height: 30px;">
     </div>
 
-
+    <!-- Modal contacto -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -134,7 +131,7 @@
         </div>
     </div>
 
-
+<!-- Chatbot -->
     <div id="chatbot-container">
 
         <div class="chatbot-header" onclick="toggleChatBot()">
@@ -153,9 +150,11 @@
 
         <div id="question-suggestions" class="suggestions">
             <div onclick="selectSuggestion('¿Para que sirve este sitio web?')">¿Para que sirve este sitio web?</div>
-            <div onclick="selectSuggestion('Tengo dudas ¿Como puedo contactarlos?')">Tengo dudas ¿Como puedo contactarlos?</div>
-            <div onclick="selectSuggestion('¿El sitio web solo sirve para dicha empresa?')">¿El sitio web solo sirve para dicha empresa?</div>
-           
+            <div onclick="selectSuggestion('Tengo dudas ¿Como puedo contactarlos?')">Tengo dudas ¿Como puedo
+                contactarlos?</div>
+            <div onclick="selectSuggestion('¿El sitio web solo sirve para dicha empresa?')">¿El sitio web solo sirve
+                para dicha empresa?</div>
+
         </div>
     </div>
 
