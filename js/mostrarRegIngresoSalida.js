@@ -4,7 +4,7 @@ const ocultarTablas = () => {
 
 // Función para obtener y mostrar la lista de registros desde el servidor
 const cargarTablaRegistro = () => {
-    return fetch("http://163.192.40.8:8000/mostraregingresosalida", { method: "GET" })
+    return fetch("https://fastapi-cci.duckdns.org/mostraregingresosalida", { method: "GET" })
         .then(response => response.json()) // Convertir la respuesta a JSON
         .then(data => {
             console.log("Datos recibidos Registros:", data);

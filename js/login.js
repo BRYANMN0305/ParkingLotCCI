@@ -12,7 +12,7 @@ const iniciarSesion = () => {
         return;
     }
 
-    fetch("http://163.192.40.8:8000/iniciar_sesion", {
+    fetch("https://fastapi-cci.duckdns.org/iniciar_sesion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ usuario, contrasena })

@@ -41,7 +41,7 @@ const enviar = () => {
     console.log("Datos enviados:", datos); // Depuración para ver los datos antes de enviarlos
 
     // Enviar datos a la API
-    fetch("http://163.192.40.8:8000/registrar_bene", {
+    fetch("https://fastapi-cci.duckdns.org/registrar_bene", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -2,7 +2,7 @@
     let miGrafico = null;
 
     const cargarBeneficiario = () => {
-        fetch("http://163.192.40.8:8000/total_bene")
+        fetch("https://fastapi-cci.duckdns.org/total_bene")
             .then(response => {
                 if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                 return response.json();

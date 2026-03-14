@@ -3,7 +3,7 @@
 
     const cargarGraficoSemanal = () => {
         try {
-            fetch("http://163.192.40.8:8000/grafico")
+            fetch("https://fastapi-cci.duckdns.org/grafico")
                 .then(response => {
                     if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                     return response.json();
