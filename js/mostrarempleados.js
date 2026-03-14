@@ -11,7 +11,7 @@ const ocultarBeneficiarios = () => {
 
 // Funcion para obtener y mostrar la lista de empleados desde el servidor
 const cargarYMostrarEmpleados = () => {
-    return fetch("https://fastapi-cci.onrender.com/mostrarempleados", { method: "GET" }) // Petición GET al servidor
+    return fetch("http://163.192.40.8:8000/mostrarempleados", { method: "GET" }) // Petición GET al servidor
         .then(response => response.json()) // Convertir la respuesta a JSON
         .then(data => {
             console.log("Datos recibidos Empleados:", data); // Mostrar datos en consola

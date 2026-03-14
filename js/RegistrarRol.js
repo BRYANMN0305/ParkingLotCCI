@@ -44,7 +44,7 @@ const enviarform = () => {
     console.log("Datos enviados:", JSON.stringify(datos)); // Asegura que los datos se impriman
 
     // Enviar datos a la API
-    fetch("https://fastapi-cci.onrender.com/registrar_rol", {
+    fetch("http://163.192.40.8:8000/registrar_rol", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

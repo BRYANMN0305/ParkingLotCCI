@@ -41,7 +41,7 @@ const enviar = () => {
     console.log("Datos enviados:", datos); // Depuración para ver los datos antes de enviarlos
 
     // Enviar datos a la API
-    fetch("https://fastapi-cci.onrender.com/registrar_bene", {
+    fetch("http://163.192.40.8:8000/registrar_bene", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

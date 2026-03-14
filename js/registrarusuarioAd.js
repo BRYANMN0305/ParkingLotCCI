@@ -44,7 +44,7 @@ const enviarformruAd = () => {
         vehiculos: vehiculos
     };
 
-    fetch("https://fastapi-cci.onrender.com/registrar_bene", {
+    fetch("http://163.192.40.8:8000/registrar_bene", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datos)

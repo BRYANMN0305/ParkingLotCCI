@@ -12,7 +12,7 @@ const iniciarSesion = () => {
         return;
     }
 
-    fetch("https://fastapi-cci.onrender.com/iniciar_sesion", {
+    fetch("http://163.192.40.8:8000/iniciar_sesion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ usuario, contrasena })

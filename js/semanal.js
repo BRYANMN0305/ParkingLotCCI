@@ -3,7 +3,7 @@
 
     const cargarGraficoSemanal = () => {
         try {
-            fetch("https://fastapi-cci.onrender.com/grafico")
+            fetch("http://163.192.40.8:8000/grafico")
                 .then(response => {
                     if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                     return response.json();

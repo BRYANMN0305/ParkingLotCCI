@@ -2,7 +2,7 @@
     let miGrafico = null;
 
     const cargarIngreso = () => {
-        fetch("https://fastapi-cci.onrender.com/ingreso_dia")
+        fetch("http://163.192.40.8:8000/ingreso_dia")
             .then(response => {
                 if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                 return response.json();

@@ -1,5 +1,5 @@
 const cargarPuestos = () => {
-    fetch("https://fastapi-cci.onrender.com/puestos/")
+    fetch("http://163.192.40.8:8000/puestos/")
     .then(res => res.json())
     .then(data => {
         const contenedor = document.getElementById("puestos-container");

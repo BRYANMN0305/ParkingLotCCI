@@ -2,7 +2,7 @@
     let miGrafico = null;
 
     const cargarBeneficiario = () => {
-        fetch("https://fastapi-cci.onrender.com/total_bene")
+        fetch("http://163.192.40.8:8000/total_bene")
             .then(response => {
                 if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
                 return response.json();
